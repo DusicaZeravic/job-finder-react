@@ -12,7 +12,8 @@ export const StyledFilter = styled.div`
     background-color: rgba(75, 75, 75, 0.9);
     border-radius: 2px;
 
-    select {
+    select, 
+    input {
         width: 280px;
         height: 50px;
         border: none;

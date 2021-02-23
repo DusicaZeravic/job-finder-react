@@ -26,7 +26,7 @@
       "location": "Novi Sad",
       "level": "medior",
       "category": "Software-development",
-      "createdAt": "15.02.2021.",
+      "createdAt": "19.02.2021.",
       "snippet": "At present, efiport is building a new Business Management System. The new application will be web-based and fully designed around the human learner (employee), front to back. As part of our Novi Sad team, you will actively shape the future of efiport and co-decide about the technologies and frameworks used.",
       "job_description": "Proven practical work experience for at least 2 years implementing Node.js / JavaScript-based web applications. Experience with AWS Services like EC2, S3 or Elastic Beanstalk, implementing secure login / SSO mechanisms and building CI/CD-Pipelines with Git or GitLab would be a plus. Plan, develop, and communicate solutions in collaboration with other developers, architects and product managers for our Business Management System. Build user interfaces using the technologies mentioned above and connect to web-services running in the backend. Develop web-services in the backend and connect to 3rd party systems using APIs.",
       "company_info": {
@@ -649,58 +649,132 @@
         ],
         "link": "https://smartapartmentdata.com/"
       }
-    }
-  ],
-  "quotes": [
-    {
-      "id": 1,
-      "text": "You learn more from failure than from success. Don't let it stop you. Failure builds character.",
-      "author": "Unknown"
     },
     {
-      "id": 2,
-      "text": "Knowing is not enough, we must apply. Wishing is not enough, we must do.",
-      "author": "Johann Wolfgang Von Goethe"
+      "id": 31,
+      "title": "Data Scientist",
+      "location": "Beograd",
+      "level": "medior",
+      "category": "Data science",
+      "createdAt": "21.02.2021.",
+      "snippet": "Grid Dynamics is growing - super fast! We want to expand our Data Science team in Belgrade, who is maybe one of the strongest and coolest team out there! :)",
+      "job_description": "Evaluate and analyze machine learning model performance. Analyze large amounts of data and images to identify anomalies and variations. Inspect data quality, create pre-processing scripts and train Deep learning ML models at scale. Implement scalable Computer Vision and Machine Learning algorithms. Collaborate with computer vision machine learning engineers and quality engineers to apply machine learning to solve industrial problems.",
+      "company_info": {
+        "name": "Grid Dynamics",
+        "general_info": "Grid Dynamics is the engineering services company known for transformative, mission-critical cloud solutions for retail, finance and technology sectors. We architected some of the busiest e-commerce services on the Internet and have never had an outage during the peak season. Founded in 2006 and headquartered in San Ramon, California with offices throughout the US and Eastern Europe, we focus on big data analytics, scalable omnichannel services, DevOps, and cloud enablement.",
+        "location": "5000 Executive Parkway, Suite 520, San Ramon, CA 94583",
+        "number_of_employees": "1001-5000",
+        "contact": [
+          "+1 (650) 523-5000",
+          "info@griddynamics.com"
+        ],
+        "link": "https://www.griddynamics.com/"
+      }
     },
     {
-      "id": 3,
-      "text": "Whether you think you can or think you can’t, you’re right.",
-      "author": "Henry Ford"
+      "id": 32,
+      "title": "Junior Visual Data Scientist",
+      "location": "Remote",
+      "level": "junior",
+      "category": "Data science",
+      "createdAt": "25.02.2021.",
+      "snippet": "ARPM is hiring a Junior Visual Data Scientist (Remote). The ARPM Junior Visual Data Scientist position represents an opportunity for candidates with a quantitative background to work in a high-performing environment.",
+      "job_description": "Review Python/MATLAB scripts that implement case studies. Create charts, graphs and data animations to illustrate the output of the case studies using Python. Enhance data animations and video lectures. Create videos for marketing purposes. Process data for marketing purposes.",
+      "company_info": {
+        "name": "ARPM LLC",
+        "general_info": "ARPM – Advanced Risk and Portfolio Management is a research and education company, founded by Attilio Meucci, based in New York City with virtual offices worldwide. Our mission is to set and disseminate the standards for advanced quantitative risk management and quantitative portfolio management across the financial industry: asset management, banking, and insurance.",
+        "location": "27 W 60th St New York, US",
+        "number_of_employees": "11-50",
+        "contact": [
+          "+1 6539 038",
+          "office@arpm.com"
+        ],
+        "link": "https://www.arpm.co/"
+      }
     },
     {
-      "id": 4,
-      "text": "Creativity is intelligence having fun.",
-      "author": "Albert Einstein"
+      "id": 33,
+      "title": "Data Engineer",
+      "location": "Beograd",
+      "level": "medior",
+      "category": "Data science",
+      "createdAt": "26.02.2021.",
+      "snippet": " As a member of our Data Exploration and Visualisation team, you will have the opportunity to extend our platform and be involved in building the infrastructure required for optimal extraction, transformation, and loading of data from a wide variety of data sources using SQL and various ‘big data’ technologies.",
+      "job_description": "Data wrangling and exploration; analyzing and organizing raw data. Working with our bioinformaticians on developing tools and pipelines for structured transformation of rich datasets. Designing schemas and data modeling. Query optimizations.",
+      "company_info": {
+        "name": "Seven Bridges",
+        "general_info": "Seven Bridges is the leading biomedical data company, specializing in software and data analytics to drive public and private healthcare research. We deliver end-to-end bioinformatic solutions — including access to datasets, analytic workflows and algorithms, cloud-computing infrastructure, and scientific support — that speed the path from raw experimental data to new treatments and diagnostics.",
+        "location": "Omladinskih brigada 90g, Airport City, Dahlia building 11070 Belgrade, Serbia",
+        "number_of_employees": "201-500",
+        "contact": [
+          "+(381) 339-3798",
+          "info@sevenbridges.com"
+        ],
+        "link": "https://www.sevenbridges.com/"
+      }
     },
     {
-      "id": 5,
-      "text": "Do what you can with all you have, wherever you are.",
-      "author": "Theodore Roosevelt"
+      "id": 34,
+      "title": "Senior Java Software Engineer",
+      "location": "Beograd",
+      "level": "senior",
+      "category": "Software-development",
+      "createdAt": "28.02.2021.",
+      "snippet": "As a member of our Engineering team, you will have the opportunity to extend our platform, build innovative tools and products, and be involved in designing new and custom solutions.",
+      "job_description": "Scaling our cloud-based distributed file system. Heterogeneous content search. Optimizing data uploads and downloads. Managing and optimizing multi-cloud resource allocation. Building a distributed execution system for genomic pipelines and tools. Building a multi-cloud billing system.",
+      "company_info": {
+        "name": "Seven Bridges",
+        "general_info": "Seven Bridges is the leading biomedical data company, specializing in software and data analytics to drive public and private healthcare research. We deliver end-to-end bioinformatic solutions — including access to datasets, analytic workflows and algorithms, cloud-computing infrastructure, and scientific support — that speed the path from raw experimental data to new treatments and diagnostics.",
+        "location": "Omladinskih brigada 90g, Airport City, Dahlia building 11070 Belgrade, Serbia",
+        "number_of_employees": "201-500",
+        "contact": [
+          "+(381) 339-3798",
+          "info@sevenbridges.com"
+        ],
+        "link": "https://www.sevenbridges.com/"
+      }
     },
     {
-      "id": 6,
-      "text": "Today's accomplishments were yesterday's impossibilities.",
-      "author": "Robert H.Schuller"
+      "id": 35,
+      "title": "Senior Java Software Engineer",
+      "location": "Beograd",
+      "level": "senior",
+      "category": "Software-development",
+      "createdAt": "28.02.2021.",
+      "snippet": "As a member of our Engineering team, you will have the opportunity to extend our platform, build innovative tools and products, and be involved in designing new and custom solutions.",
+      "job_description": "Scaling our cloud-based distributed file system. Heterogeneous content search. Optimizing data uploads and downloads. Managing and optimizing multi-cloud resource allocation. Building a distributed execution system for genomic pipelines and tools. Building a multi-cloud billing system.",
+      "company_info": {
+        "name": "Seven Bridges",
+        "general_info": "Seven Bridges is the leading biomedical data company, specializing in software and data analytics to drive public and private healthcare research. We deliver end-to-end bioinformatic solutions — including access to datasets, analytic workflows and algorithms, cloud-computing infrastructure, and scientific support — that speed the path from raw experimental data to new treatments and diagnostics.",
+        "location": "Omladinskih brigada 90g, Airport City, Dahlia building 11070 Belgrade, Serbia",
+        "number_of_employees": "201-500",
+        "contact": [
+          "+(381) 339-3798",
+          "info@sevenbridges.com"
+        ],
+        "link": "https://www.sevenbridges.com/"
+      }
     },
     {
-      "id": 7,
-      "text": "You don't have to be great to start, but you have to start to be great.",
-      "author": "Zig Ziglar"
-    },
-    {
-      "id": 8,
-      "text": "We are what we repeatedly do. Excellence, therefore, is not an act. But a habit.",
-      "author": "Aristotle"
-    },
-    {
-      "id": 9,
-      "text": "Continuous improvement is better than delayed perfection.",
-      "author": "Mark Twain"
-    },
-    {
-      "id": 10,
-      "text": "Sometimes the fall kills you. And sometimes, when you fall, you fly.",
-      "author": "Neil Gaiman"
+      "id": 36,
+      "title": "Java Developer",
+      "location": "Beograd",
+      "level": "medior",
+      "category": "Software-development",
+      "createdAt": "10.02.2021.",
+      "snippet": "Are you curious, motivated, and forward-thinking? At FIS you’ll have the opportunity to work on some of the most challenging and relevant issues in financial services and technology. Our talented people empower us, and we believe in being part of a team that is open, collaborative, entrepreneurial, passionate and above all fun.",
+      "job_description": "You would be a part of the team developing a real-time system for processing of foreign exchange products, including support for a customer dealing portal, interfacing to third party platforms/systems, trade capture, position/risk management, confirmation/settlement, and accounting. The system has web-based user interface and a rich technology stack.",
+      "company_info": {
+        "name": "FIS",
+        "general_info": "FIS is a leader in technology and services that helps businesses and communities thrive by advancing commerce and the financial world. Headquartered in Jacksonville, Florida, FIS employs more than 55,000 people across 50+ countries, dedicated to helping our clients be ahead of what’s next. FIS offers more than 450 solutions and processes over $75b of transactions around the planet. FIS is a Fortune 500® company and is a member of Standard & Poor’s 500® Index.",
+        "location": "Jacksonville, Florida United States",
+        "number_of_employees": "10,001+",
+        "contact": [
+          "+1 877.776.3706",
+          "getinfo@fisglobal.com"
+        ],
+        "link": "https://www.fisglobal.com/"
+      }
     }
   ]
 }

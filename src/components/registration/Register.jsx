@@ -1,10 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { getUsers, postUser } from '../../service';
 import { StyledRegister } from './StyledRegister';
 
 const Register = () => {
-    const [users, setUsers] = useState([]);
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
@@ -16,35 +15,23 @@ const Register = () => {
     const [emailError, setEmailError] = useState('');
     const [passwordError, setPasswordError] = useState('');
     const [confirmedPasswordError, setConfirmedPasswordError] = useState('');
+    const [uniqueError, setUniqueError] = useState('');
 
     const history = useHistory();
 
-    useEffect(() => {
-        let mounted = true;
-        getUsers().then(res => {
-            if (mounted) {
-                setUsers(res.data);
-            }
-
-            return function cleanup() {
-                mounted = false
-            }
-        })
-    }, []);
-
     const validateEmail = (email) => {
         const emailRegEx = /\S+@\S+\.\S+/;
-        return emailRegEx.test(email);
+        return email.match(emailRegEx);
     }
 
     const validatePassword = (password) => {
         const passwordRegEx = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
-        return passwordRegEx.test(password);
+        return password.match(passwordRegEx);
     }
 
     const isValid = () => {
         if (firstName.trim() === '') {
-            setFirstNameError('You must enter your name!');
+            setFirstNameError('You must enter your first name!');
         } else {
             setFirstNameError('');
         }
@@ -64,9 +51,9 @@ const Register = () => {
             setPasswordError('');
         }
         if (confirmedPassword !== password) {
-            setConfirmedPassword('Passwords do not match!')
+            setConfirmedPasswordError('Passwords do not match!')
         } else {
-            setConfirmedPassword('');
+            setConfirmedPasswordError('');
         }
         if (firstName.trim() === '' || lastName.trim() === '' || !validateEmail(email) || !validatePassword(password) || confirmedPassword !== password) {
             return false;
@@ -88,15 +75,16 @@ const Register = () => {
         setConfirmedPassword('');
     }
 
-
     return (
         <StyledRegister>
             <form onSubmit={(e) => {
                 e.preventDefault();
-
-                if (isValid()) {
-                    let user = {
-                        id: generateId(users),
+                if (!isValid()) {
+                    return
+                }
+                getUsers().then(res => {
+                    let newUser = {
+                        id: generateId(res.data),
                         username: firstName + lastName.charAt(0),
                         firstName: firstName,
                         lastName: lastName,
@@ -104,43 +92,45 @@ const Register = () => {
                         password: password,
                         confirm_password: confirmedPassword
                     };
-
-                    postUser(user).then(() => {
-                        setUsers(prev => [...prev, user]);
-                    });
-
-                    clearAllInputs();
-
-                    history.push('login');
-                }
+                    if (!res.data.some(user => user.email === email)) {
+                        postUser(newUser).then(() => {
+                            setUniqueError('');
+                            clearAllInputs();
+                            history.push('/login');
+                        })
+                    } else {
+                        setUniqueError('User with that email already exist!')
+                    }
+                })
             }}>
                 <h2>Create an Account</h2>
+                    <p className="unique-error">{uniqueError}</p>
                 <ul>
                     <li>
                         <label htmlFor="first_name">First Name</label>
                         <input value={firstName} type="text" name="first_name" id="first-name" onChange={(e) => setFirstName(e.target.value)} />
                     </li>
-                    <p>{firstNameError}</p>
+                    <p className="error-msg">{firstNameError}</p>
                     <li>
                         <label htmlFor="last_name">Last Name</label>
                         <input value={lastName} type="text" name="last_name" id="last-name" onChange={(e) => setLastName(e.target.value)} />
                     </li>
-                    <p>{lastNameError}</p>
+                    <p className="error-msg">{lastNameError}</p>
                     <li>
                         <label htmlFor="email">E-mail</label>
                         <input value={email} type="email" name="email" id="email" onChange={(e) => setEmail(e.target.value)} />
                     </li>
-                    <p>{emailError}</p>
+                    <p className="error-msg">{emailError}</p>
                     <li>
                         <label htmlFor="password">Password</label>
                         <input value={password} type="password" name="password" id="password" onChange={(e) => setPassword(e.target.value)} />
                     </li>
-                    <p>{passwordError}</p>
+                    <p className="error-msg">{passwordError}</p>
                     <li>
                         <label htmlFor="confirm_password">Confirm Password</label>
                         <input value={confirmedPassword} type="password" name="confirm_password" id="confirm_password" onChange={(e) => setConfirmedPassword(e.target.value)} />
                     </li>
-                    <p>{confirmedPasswordError}</p>
+                    <p className="error-msg">{confirmedPasswordError}</p>
                     <li>
                         <input type="submit" value="Sign Up" />
                     </li>

@@ -75,6 +75,13 @@ export const StyledLoginForm = styled.div`
         text-decoration: underline;
        }
    }
+
+   .error-msg {
+        font-size: 13px;
+        color: #e05555;
+        text-align: center;
+        font-weight: bold;
+   }
 `
 
 export const StyledLogo = styled.div`

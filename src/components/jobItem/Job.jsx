@@ -9,7 +9,7 @@ const Job = ({ job }) => {
             <div className="location"><span><i className="fas fa-map-marker-alt"></i></span><p>{job.location}</p></div>
             <p>Created At: {job.createdAt}</p>
             <p>{job.snippet}</p>
-            <Link to={`/jobs/${job.id}`}><button>See More Info</button></Link>
+            <Link to={`/jobs/${job.id}`}><button>See More</button></Link>
         </StyledJobItem>
     )
 }

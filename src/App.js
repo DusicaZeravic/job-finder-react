@@ -39,10 +39,10 @@ const App = () => {
           <JobInfo />
         </Route>
         <Route path="/jobs">
-          <JobList jobs={jobs} user={user}/>
+          <JobList jobs={jobs} user={user} />
         </Route>
         <Route path="/">
-          <Home />
+          <Home jobs={jobs} />
         </Route>
       </Switch>
     </Router>

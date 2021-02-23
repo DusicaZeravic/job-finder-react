@@ -13,7 +13,7 @@ export const StyledRegister = styled.div`
         flex-direction: column;
         box-shadow: 1px 5px 12px 0px rgba(0,0,0,0.4);
         text-align: center;
-        padding: 30px 10px;
+        padding: 40px 10px;
         color: #4b4b4b;
 
     h2 {
@@ -27,12 +27,10 @@ export const StyledRegister = styled.div`
         padding: 0;
         max-width: 800px;
         margin: 0 auto;
-
         li {
             display: flex;
             flex-wrap: wrap;
             align-items: center;
-
             label {
                 padding: 8px;
                 font-weight: 300;
@@ -40,12 +38,10 @@ export const StyledRegister = styled.div`
                 text-transform: uppercase;
             }
         }
-
         > li:not(:last-child) {
             margin-bottom: 20px;
         }
     }
-
         ul > li > label {
             flex: 1 0 120px;
             margin-right: 50px
@@ -56,7 +52,6 @@ export const StyledRegister = styled.div`
         }
 
         ul li input {
-            padding: 15px; 
             border: none;
             outline: none;
             padding: 8px 16px;
@@ -73,6 +68,14 @@ export const StyledRegister = styled.div`
             &:hover {
                 opacity: 1;
             }
+        }
+
+        .error-msg,
+        .unique-error {
+            font-size: 13px;
+            color: #e05555;
+            text-align: center;
+            font-weight: bold;
         }
     }
 `
