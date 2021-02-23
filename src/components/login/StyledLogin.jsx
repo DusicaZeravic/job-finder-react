@@ -45,6 +45,7 @@ export const StyledLoginForm = styled.div`
     }
 
     input[type="submit"] {
+        cursor: pointer;
         background-color: #4b4b4b;
         opacity: 0.85;
         color: #fafafa;

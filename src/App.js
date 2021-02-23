@@ -6,7 +6,7 @@ import JobList from './components/jobList/JobList';
 import JobInfo from './components/jobInfo/JobInfo';
 import Home from './components/home/Home';
 import Login from './components/login/Login';
-import Register from './components/registration/Register';
+import Register from './components/registration/register/Register';
 import CompanyInfo from './components/companyInfo/CompanyInfo';
 import GlobalStyle from './components/GlobalStyle';
 

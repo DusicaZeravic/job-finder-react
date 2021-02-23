@@ -16,7 +16,7 @@ const Home = ({ jobs }) => {
                     <i className="fas fa-chevron-left"></i>
                 </StyledPrevious>
                 <StyledCurrent>
-                    <q>{jobs[current]?.title}</q>
+                    <p>&#10032; {jobs[current]?.title} &#10032;</p>
                     <p>{jobs[current]?.company_info.name}</p>
                 </StyledCurrent>
                 <StyledNext onClick={nextJob}>

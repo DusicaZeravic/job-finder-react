@@ -1,24 +1,22 @@
 import styled from 'styled-components';
 
-export const StyledRegister = styled.div`
+export const StyledRegisterFront = styled.div`
     width: 100%;
-    height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    /* height: 500px; */
 
     form {
-        width: 40%;
+        width: 100%;
+        height: 100%;
         display: flex;
         flex-direction: column;
+        padding: 30px;
         box-shadow: 1px 5px 12px 0px rgba(0,0,0,0.4);
         text-align: center;
-        padding: 40px 10px;
         color: #4b4b4b;
 
     h2 {
         text-transform: uppercase;
-        margin-bottom: 50px;
+        margin: 50px 0 20px 0;
         letter-spacing: 1px;
     }
 
@@ -38,26 +36,24 @@ export const StyledRegister = styled.div`
                 text-transform: uppercase;
             }
         }
-        > li:not(:last-child) {
-            margin-bottom: 20px;
-        }
     }
-        ul > li > label {
+        ul  li  label {
             flex: 1 0 120px;
             margin-right: 50px
         }
 
-        ul > li > label + * {
+        ul  li  label + * {
             flex: 1 0 220px;
         }
 
         ul li input {
             border: none;
             outline: none;
-            padding: 8px 16px;
+            padding: 8px 20px;
         }
 
         input[type="submit"] {
+            cursor: pointer;
             margin-left: auto;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -79,4 +75,3 @@ export const StyledRegister = styled.div`
         }
     }
 `
-    

@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { useHistory } from 'react-router-dom';
-import { getUsers, postUser } from '../../service';
-import { StyledRegister } from './StyledRegister';
+// import { useHistory } from 'react-router-dom';
+import { getUsers, postUser } from '../../../service';
+import { StyledRegisterFront } from './StyledRegisterFront';
 
-const Register = () => {
+const FrontRegister = ({ rotate }) => {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
@@ -17,7 +17,7 @@ const Register = () => {
     const [confirmedPasswordError, setConfirmedPasswordError] = useState('');
     const [uniqueError, setUniqueError] = useState('');
 
-    const history = useHistory();
+    // const history = useHistory();
 
     const validateEmail = (email) => {
         const emailRegEx = /\S+@\S+\.\S+/;
@@ -76,7 +76,7 @@ const Register = () => {
     }
 
     return (
-        <StyledRegister>
+        <StyledRegisterFront>
             <form onSubmit={(e) => {
                 e.preventDefault();
                 if (!isValid()) {
@@ -96,7 +96,8 @@ const Register = () => {
                         postUser(newUser).then(() => {
                             setUniqueError('');
                             clearAllInputs();
-                            history.push('/login');
+                            // history.push('/login');
+                            rotate();
                         })
                     } else {
                         setUniqueError('User with that email already exist!')
@@ -104,7 +105,7 @@ const Register = () => {
                 })
             }}>
                 <h2>Create an Account</h2>
-                    <p className="unique-error">{uniqueError}</p>
+                <p className="unique-error">{uniqueError}</p>
                 <ul>
                     <li>
                         <label htmlFor="first_name">First Name</label>
@@ -136,8 +137,8 @@ const Register = () => {
                     </li>
                 </ul>
             </form>
-        </StyledRegister>
+        </StyledRegisterFront>
     )
 }
 
-export default Register
+export default FrontRegister
