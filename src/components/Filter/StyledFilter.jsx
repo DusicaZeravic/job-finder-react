@@ -8,7 +8,7 @@ export const StyledFilter = styled.div`
     margin-bottom: 100px;
     width: 80%;
     padding: 25px;
-    margin: 0 auto 120px auto;
+    margin: 0 auto 80px auto;
     background-color: rgba(75, 75, 75, 0.9);
     border-radius: 2px;
 

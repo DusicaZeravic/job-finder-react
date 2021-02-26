@@ -4,7 +4,7 @@ const Filter = ({ jobs, setFilterInput, setLocation, setLevel }) => {
 
     // let categories = Array.from(new Set(jobs.map(job => job.category)));
     let locationArr = Array.from(new Set(jobs.map(job => job.location)));
-    let levels = Array.from(new Set(jobs.map(job => job.level)));
+    let levels = Array.from(new Set(jobs.map(job => job.seniority)));
 
     return (
         <StyledFilter>

@@ -2,14 +2,14 @@ import styled from 'styled-components';
 
 export const StyledHome = styled.div`
     width: 100%;
-    height: 90vh;
+    height: 85vh;
     display: flex;
     align-items: center;
     flex-direction: column;
     background-image: url('/background.jpg');
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% 100%;
     opacity: 0.85;
 
     h1 {
@@ -30,13 +30,48 @@ export const StyledHome = styled.div`
             text-decoration: underline;
         }
     }
+
+    @media (max-width: 768px) {
+        height: 90vh;
+        background-repeat: no-repeat;
+        h1 {
+            font-size: 35px;
+        }
+        a {
+            font-size: 15px;
+        }
+    }
+
+    @media (max-width: 440px) {
+        h1 {
+            font-size: 27px;
+        }
+    }
+
+   @media (max-width: 360px) {
+       width: 100%;
+       h1 {
+           font-size: 22px;
+       }
+       a {
+           font-size: 13px;
+       }
+   }
 `
 
-export const StyledQuotes = styled.div`
+export const StyledDiv = styled.div`
     width: 70%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media (max-width: 768px) {
+        width: 75%;
+    }
+
+    @media (max-width: 360px) {
+        width: 85%;
+    }
 `
 
 export const StyledCurrent = styled.div`
@@ -65,7 +100,11 @@ export const StyledCurrent = styled.div`
                 /* transform: translate3d(-50%, -50%, 0) scale(1.015) rotate(0.5deg); */
                 border-radius: 1% 1% 2% 4% / 2% 6% 5% 4%;
             }
-`
+
+        @media (max-width: 768px) {
+            font-size: 17px;
+        }
+        `
 
 export const StyledPrevious = styled.div`
     font-size: 40px;
@@ -73,6 +112,10 @@ export const StyledPrevious = styled.div`
     text-shadow: 7px 7px 14px rgba(150, 150, 150, 0.83);
     opacity: 0.85;
     cursor: pointer;
+
+    @media (max-width: 360px) {
+        font-size: 30px;
+    }
 `
 
 export const StyledNext = styled.div`
@@ -81,4 +124,8 @@ export const StyledNext = styled.div`
     text-shadow: 7px 7px 14px rgba(150, 150, 150, 0.83);
     opacity: 0.85;
     cursor: pointer;
+
+    @media (max-width: 360px) {
+        font-size: 30px;
+    }
 `

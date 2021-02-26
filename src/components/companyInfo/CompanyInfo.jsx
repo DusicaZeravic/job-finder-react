@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { Redirect, useParams } from 'react-router-dom';
 import { getJobById } from '../../service';
 import { StyledCompanyInfo, StyledLeftDiv, StyledRightDiv } from './StyledCompanyInfo';
 
-const CompanyInfo = () => {
+const CompanyInfo = ({ user }) => {
     const [job, setJob] = useState(null);
 
     let { id } = useParams();
@@ -14,7 +14,7 @@ const CompanyInfo = () => {
         })
     }, []);
 
-    return (
+    return user ? (
         <StyledCompanyInfo>
             <h1>{job?.company_info.name}</h1>
             <div>
@@ -33,7 +33,9 @@ const CompanyInfo = () => {
                 </StyledRightDiv>
             </div>
         </StyledCompanyInfo>
-    )
+    ) 
+    : 
+    <Redirect to='/login' />
 }
 
 export default CompanyInfo

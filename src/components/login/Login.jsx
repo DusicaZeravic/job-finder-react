@@ -13,17 +13,17 @@ const Login = ({ setUser }) => {
     const history = useHistory();
 
     const isValid = (user) => {
-        if(email.trim() !== user?.email) {
+        if (email.trim() !== user?.email) {
             setEmailError('Incorrect email address!')
         } else {
             setEmailError('');
         }
-        if(password.trim() !== user?.password) {
+        if (password.trim() !== user?.password) {
             setPasswordError('Incorrect password!')
         } else {
             setPasswordError('');
         }
-        if(email.trim() !== user?.email || password.trim() !== user?.password) {
+        if (email.trim() !== user?.email || password.trim() !== user?.password) {
             return false
         } else {
             return true;
@@ -39,8 +39,9 @@ const Login = ({ setUser }) => {
                     if (user) {
                         setUser(user);
                         history.push('/jobs');
+
                     } else {
-                       isValid(user);
+                        isValid(user);
                     }
                 })
             }}>

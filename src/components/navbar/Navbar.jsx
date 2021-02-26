@@ -10,7 +10,6 @@ const Navbar = ({ user, setUser }) => {
                 <Link to="/">Home</Link>
                 <Link to="/jobs">Job List</Link>
             </LeftStyledNavbar>
-
             {
                 user ?
                     <div className='logged-user'>

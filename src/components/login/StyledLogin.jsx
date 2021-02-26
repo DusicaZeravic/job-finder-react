@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StyledLogin = styled.div`
     width: 100%;
-    height: 90vh;
+    height: 85vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -82,6 +82,10 @@ export const StyledLoginForm = styled.div`
         color: #e05555;
         text-align: center;
         font-weight: bold;
+   }
+
+   @media (max-width: 768px) {
+       height: 550px;
    }
 `
 

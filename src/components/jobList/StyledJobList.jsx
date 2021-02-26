@@ -22,3 +22,29 @@ export const StyledJobList = styled.div`
         letter-spacing: 1px;
     }
 `
+
+export const StyledCreateNew = styled.div`
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 40px;
+
+    button {
+        cursor: pointer;
+        padding: 10px 50px;
+        border: none;
+        outline: none;
+        font-size: 17px;
+        background-color: #fffa65;
+        color: #4b4b4b;
+        border-radius: 2px;
+        &:before {
+            content: '+';
+            padding-right: 20px;
+            font-size: 17px;
+        } 
+        &:hover {
+            background-color: #fff200;
+        }
+    }
+`

@@ -79,12 +79,33 @@ export const LeftStyledNavbar = styled.div`
     display: flex;
     justify-content: space-around;
     margin-left: -70px;
+
+    @media (max-width: 768px) {
+        width: 30%;
+    }
+
+    @media (max-width: 600px) {
+        margin-left: -20px;
+    }
+
+    @media (max-width: 360px) {
+        width: 50%;
+        margin-left: -5px;
+    }
 `
 export const RightStyledNavbar = styled.div`
     width: 20%;
     display: flex;
     justify-content: space-between;
     margin-left: 70px;
+
+    @media (max-width: 768px) {
+        width: 30%;
+    }
+
+    @media (max-width: 360px) {
+        width: 60%;
+    }
 `
 
 
