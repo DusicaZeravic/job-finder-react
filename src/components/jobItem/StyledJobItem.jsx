@@ -35,9 +35,10 @@ export const StyledJobItem = styled.div`
         }
     }
 
-    button {
+    button:first-child {
         background-color: #fffa65;
         border: none;
+        outline: none;
         padding: 10px 20px;
         opacity: 0.75;
         font-size: 15px;
@@ -46,5 +47,20 @@ export const StyledJobItem = styled.div`
         &:hover {
             opacity: 1;
         }
+    }
+`
+
+export const StyledDeleteButton = styled.button`
+    margin-left: 15px;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    font-size: 15px;
+    border-radius: 5px;
+    color: #4b4b4b;
+    background-color: rgba(167, 14, 14, 0.4);
+    cursor: pointer;
+    &:hover {
+        background-color: rgba(167, 14, 14, 0.6);
     }
 `

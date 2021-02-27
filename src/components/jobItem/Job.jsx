@@ -1,7 +1,8 @@
-import { Link, Redirect } from 'react-router-dom';
-import { StyledJobItem } from './StyledJobItem';
+import { Link } from 'react-router-dom';
+import { deleteJobById } from '../../service';
+import { StyledJobItem, StyledDeleteButton } from './StyledJobItem';
 
-const Job = ({ job }) => {
+const Job = ({ job, setJobs, user }) => {
     return (
         <StyledJobItem>
             <h3>{job.title}</h3>
@@ -10,6 +11,11 @@ const Job = ({ job }) => {
             <p>Created At: {job.createdAt}</p>
             <p>{job.snippet}</p>
             <Link to={`/jobs/${job.id}`}><button>See More</button></Link>
+            {user.role === 'admin' ? <StyledDeleteButton onClick={() => {
+                deleteJobById(job.id).then(() => {
+                    setJobs(prev => prev.filter(el => el.id !== job.id))
+                })
+            }}>Delete</StyledDeleteButton> : ''}
         </StyledJobItem>
     )
 }

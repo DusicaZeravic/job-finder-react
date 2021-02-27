@@ -72,6 +72,21 @@ export const StyledNavbar = styled.nav`
             }
         }
     }
+
+    @media (max-width: 768px) {
+        .logged-user {
+            width: 30%;
+        }
+         span {
+            margin-right: 10px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .logged-user {
+            width: 40%;
+        }
+    }
 `
 
 export const LeftStyledNavbar = styled.div`

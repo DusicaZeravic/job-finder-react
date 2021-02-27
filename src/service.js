@@ -10,6 +10,8 @@ export const getJobById = (id) => axios.get(`${BASE_URL}${JOBS}/${id}`);
 
 export const postJob = (job) => axios.post(`${BASE_URL}${JOBS}`, job);
 
+export const deleteJobById = (id) => axios.delete(`${BASE_URL}${JOBS}/${id}`);
+
 export const getUsers = () => axios.get(`${BASE_URL}${USERS}`);
 
 export const postUser = (user) => axios.post(`${BASE_URL}${USERS}`, user);

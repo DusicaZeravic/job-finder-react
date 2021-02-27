@@ -1,14 +1,13 @@
 import { useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import { postJob } from '../../service';
-import { StyledButton, StyledCreateJob, StyledForm, StyledJobInfo, StyledCompanyInfo} from './StyledCreateJob';
+import { StyledButton, StyledCreateJob, StyledForm, StyledJobInfo, StyledCompanyInfo, StyledErrorMsg, StyledSuccessMsg } from './StyledCreateJob';
 
 const CreateJob = ({ user, jobs, setJobs }) => {
     const [jobTitle, setJobTitle] = useState('');
     const [jobLocation, setJobLocation] = useState('');
     const [seniority, setSeniority] = useState('');
     const [jobCategory, setJobCategory] = useState('');
-    const [timestamp, setTimestamp] = useState('');
     const [jobSnippet, setJobSnippet] = useState('');
     const [jobDescription, setJobDescription] = useState('');
     const [companyName, setCompanyName] = useState('');
@@ -18,99 +17,149 @@ const CreateJob = ({ user, jobs, setJobs }) => {
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
     const [url, setUrl] = useState('');
+    const [error, setError] = useState('');
+    const [successMessage, setSuccessMessage] = useState('');
 
     let categories = Array.from(new Set(jobs.map(job => job.category)));
     let levels = Array.from(new Set(jobs.map(job => job.seniority)));
 
     const generateId = () => {
         return Math.max(0, ...jobs.map(job => job.id)) + 1;
+    };
+
+    const getDate = () => {
+        const date = new Date();
+        const day = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(date);
+        const month = new Intl.DateTimeFormat('en', { month: 'numeric' }).format(date);
+        const year = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(date);
+        return `${day}.${month}.${year}.`
+    }
+
+    const isValid = () => {
+        if (jobTitle.trim() === '' || jobLocation.trim() === '' || seniority === '' || jobCategory === '' || jobSnippet.trim() === '' || jobDescription.trim() === '' || companyName.trim() === '' || companyInfo.trim() === '' || location.trim() === '' || employeesNumber.trim() === '' || phone.trim() === '' || email.trim() === '' || url.trim() === '') {
+            setError(<p className="error-msg">All fields must be filled!</p>);
+            setTimeout(() => {
+                setError('');
+            }, 2000);
+            return false;
+        } else {
+            setSuccessMessage(<p className="success-msg">Successfully saved!</p>);
+            setTimeout(() => {
+                setSuccessMessage('');
+            }, 5000);
+            return true;
+        }
     }
 
     return user ? (
         <StyledCreateJob>
             <StyledForm onSubmit={(e) => {
                 e.preventDefault(e);
-                let newJob = {
-                    id: generateId(),
-                    title: jobTitle,
-                    location: jobLocation,
-                    seniority: seniority,
-                    category: jobCategory,
-                    createdAt: timestamp,
-                    snippet: jobSnippet,
-                    job_description: jobDescription,
-                    company_info: {
-                        name: companyName,
-                        general_info: companyInfo,
-                        location: location,
-                        number_of_employees: employeesNumber,
-                        contact: [
-                            phone, email
-                        ],
-                        link: url
-                    }
-                };
-                console.log(newJob);
 
-                postJob(newJob).then(() => {
-                    setJobs(prev => [...prev, newJob]);
-                });
+                if (isValid()) {
+                    let newJob = {
+                        id: generateId(),
+                        title: jobTitle,
+                        location: jobLocation,
+                        seniority: seniority,
+                        category: jobCategory,
+                        createdAt: getDate(),
+                        snippet: jobSnippet,
+                        job_description: jobDescription,
+                        company_info: {
+                            name: companyName,
+                            general_info: companyInfo,
+                            location: location,
+                            number_of_employees: employeesNumber,
+                            contact: [
+                                phone, email
+                            ],
+                            link: url
+                        }
+                    };
+
+                    postJob(newJob).then(() => {
+                        setJobs(prev => [...prev, newJob]);
+                    });
+                }
             }}>
 
                 <StyledJobInfo>
-                    <h3>Job Info</h3>
-                    <div className="inputs">
-                        <div>
+                    <h3><span>Job Info</span></h3>
+                    <ul>
+                        <li>
+                            <label>Job Title</label>
                             <input type="text" className="form-control" placeholder="Job Title..." onChange={(e) => setJobTitle(e.target.value)} />
+                        </li>
+                        <li>
+                            <label>Location</label>
                             <input type="text" className="form-control" placeholder="Location..." onChange={(e) => setJobLocation(e.target.value)} />
-                        </div>
-                        <div>
+                        </li>
+                        <li>
                             <p>Seniority</p>
                             {levels.map(level => <div className="seniority" key={level}>
                                 <input type="radio" name="seniority" value={level} onChange={(e) => setSeniority(e.target.value)} />
-                                <label htmlFor={level}>{level}</label>
+                                <label className="seniority-label" htmlFor={level}>{level}</label>
                             </div>
                             )}
-                        </div>
-                        <div>
+                        </li>
+                        <li>
+                            <label>Category</label>
                             <select defaultValue={'default'} onChange={(e) => setJobCategory(e.target.value)}>
                                 <option value="default" disabled hidden>Choose category</option>
                                 {categories.map(category => <option key={category} value={category}>{category}</option>)}
                                 <option value="other">Other</option>
                             </select>
-                            <input type="date" name="date" onChange={(e) => setTimestamp(e.target.value)} />
-                        </div>
-                        <div>
+                        </li>
+                        <li>
+                            <label>Short Description</label>
                             <textarea cols="40" rows="5" placeholder="Enter Job Snippet..." onChange={(e) => setJobSnippet(e.target.value)}></textarea>
-                        </div>
-                        <div>
+                        </li>
+                        <li>
+                            <label>Job Description</label>
                             <textarea cols="50" rows="10" placeholder="Enter Job Description..." onChange={(e) => setJobDescription(e.target.value)}></textarea>
-                        </div>
-                    </div>
+                        </li>
+                    </ul>
                 </StyledJobInfo>
                 <StyledCompanyInfo>
-                    <h3>Company Info</h3>
-                    <div className="inputs">
-                        <div>
+                    <h3><span>Company Info</span></h3>
+                    <ul>
+                        <li>
+                            <label>Company Name</label>
                             <input type="text" placeholder="Company Name..." onChange={(e) => setCompanyName(e.target.value)} />
-                        </div>
-                        <div>
-                            <textarea cols="50" rows="10" placeholder="Enter Company Info" onChange={(e) => setCompanyInfo(e.target.value)}></textarea>
-                        </div>
-                        <div>
+                        </li>
+                        <li>
+                            <label>About Company</label>
+                            <textarea cols="50" rows="10" placeholder="Enter Company Info..." onChange={(e) => setCompanyInfo(e.target.value)}></textarea>
+                        </li>
+                        <li>
+                            <label>Location</label>
                             <input type="text" placeholder="Location..." onChange={(e) => setLocation(e.target.value)} />
-                            <input type="number" placeholder="Number of employees" onChange={(e) => setEmployeesNumber(e.target.value)} />
-                        </div>
-                        <div>
-                            <h4>Contact Info</h4>
+                        </li>
+                        <li>
+                            <label>Number of employees</label>
+                            <input type="number" placeholder="Number of employees..." onChange={(e) => setEmployeesNumber(e.target.value)} />
+                        </li>
+                        <li>
+                            <label>Phone Number</label>
                             <input type="text" placeholder="Phone Number..." onChange={(e) => setPhone(e.target.value)} />
-                            <input type="text" placeholder="Email Address" onChange={(e) => setEmail(e.target.value)} />
-                            <div>
-                                <input type="text" placeholder="Official site..." onChange={(e) => setUrl(e.target.value)} />
-                            </div>
-                        </div>
-                    </div>
+                        </li>
+                        <li>
+                            <label>Email Address</label>
+                            <input type="text" placeholder="Email Address..." onChange={(e) => setEmail(e.target.value)} />
+                        </li>
+                        <li>
+                            <label>Official Site</label>
+                            <input type="text" placeholder="Official site..." onChange={(e) => setUrl(e.target.value)} />
+                        </li>
+                    </ul>
                 </StyledCompanyInfo>
+                <StyledErrorMsg>
+                    {error}
+                </StyledErrorMsg>
+                <StyledSuccessMsg>
+                    {successMessage}
+                </StyledSuccessMsg>
                 <StyledButton>
                     <input type="submit" value="Save" />
                 </StyledButton>

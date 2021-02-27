@@ -24,8 +24,8 @@
       "username": "DusicaZ",
       "firstName": "Dusica",
       "lastName": "Zeravic",
-      "email": "dusicazeravic@gmail.com",
-      "password": "12345",
+      "email": "dusica@gmail.com",
+      "password": "123",
       "confirm_password": "12345"
     }
   ],
@@ -94,27 +94,6 @@
       }
     },
     {
-      "id": 4,
-      "title": "Data Analysis & Reporting Coordinator",
-      "location": "Beograd",
-      "seniority": "medior",
-      "category": "Data science",
-      "createdAt": "11.02.2021.",
-      "snippet": "MSG Global Solutions South East Europe d.o.o. is looking for Data Analysis & Reporting Coordinator.",
-      "job_description": "Work mainly in BI software (QlikView) and occasionally in data source tool (time booking and efforts planning tool). Monitor and troubleshoot system performance and processes, verify the integrity and availability of all relevant processes, review system and application logs, assure timely execution of scheduled tasks. Maintain and support data analytics platforms and underlying data source systems. Hold training and workshop sessions for key-users and other team members.",
-      "company_info": {
-        "name": "MSG Global Solutions South East Europe d.o.o.",
-        "general_info": "msg global solutions South East Europe was founded in August 2011, as a part of msg global solutions group, with the branch office located in Belgrade. In the beginning, the primary focus of the company was to provide consulting services for the SAP core insurance solutions to its clients worldwide through onsite assignments, but also through establishing nearshore implementation hub.",
-        "location": "Omladinskih Brigada 90g 11070 Novi Beograd, 11070 Novi Beograd, Srbija",
-        "number_of_employees": "101 - 250",
-        "contact": [
-          "+381 11 353 35 10",
-          "msgsee@msg-global.com"
-        ],
-        "link": "https://careers.msg-global.com/"
-      }
-    },
-    {
       "id": 5,
       "title": "Junior Backend Developer",
       "location": "Beograd",
@@ -159,7 +138,7 @@
     {
       "id": 7,
       "title": "Internship program in the Indirect Purchasing in Technical Service department",
-      "location": "Prokuplje",
+      "location": "Kruševac",
       "seniority": "internship",
       "category": "Management",
       "createdAt": "17.02.2021.",
@@ -168,7 +147,7 @@
       "company_info": {
         "name": "Bizlink Technology SRB d.o.o.",
         "general_info": "BizLink, founded in 1996, is headquartered in Silicon Valley, USA. Our very first products were IT industry power cord sets. By developing reliable interconnect solutions for diversified customers, BizLink established itself as a trusted supplier. Since then, BizLink has become more diverse by providing essential components, harnesses and cables to industries such as IT and CE, Motor Vehicle, Electrical Appliances, Medical Equipment, Industrial, Optical Fiber Communications, and Solar. Our mission is to make interconnection easier and to become the leading global interconnect solution provider.",
-        "location": "Vasilija Đurovića Žarkog 56, 18400 Prokuplje, Srbija",
+        "location": "Vasilija Đurovića Žarkog 56, 18400 Kruševac, Srbija",
         "number_of_employees": "50",
         "contact": [
           "+381-27319100",

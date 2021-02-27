@@ -10,7 +10,7 @@ export const StyledCompanyInfo = styled.div`
     color: #4b4b4b;
     &::after {
         content: ' ';
-        border-top: 90vh solid #fffa65;
+        border-top: 85vh solid #fffa65;
         border-right: 100vW solid transparent;
         width: 0;
         position: absolute;

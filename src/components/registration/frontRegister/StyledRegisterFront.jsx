@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const StyledRegisterFront = styled.div`
     width: 100%;
-    /* height: 500px; */
 
     form {
         width: 100%;
@@ -47,7 +46,7 @@ export const StyledRegisterFront = styled.div`
         }
 
         ul li input {
-            border: none;
+            border: 2px solid #eee;
             outline: none;
             padding: 8px 20px;
         }

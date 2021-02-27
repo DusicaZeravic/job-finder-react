@@ -9,12 +9,13 @@ export const StyledFilter = styled.div`
     width: 80%;
     padding: 25px;
     margin: 0 auto 80px auto;
-    background-color: rgba(75, 75, 75, 0.9);
+    background-color: rgba(75, 75, 75, 0.8);
     border-radius: 2px;
 
     select, 
     input {
-        width: 280px;
+        flex: 1 1 auto;
+        margin: 5px;
         height: 50px;
         border: none;
         outline: none;
@@ -31,6 +32,22 @@ export const StyledFilter = styled.div`
                 font-weight: bold;
                 background-color: rgba(75, 75, 75, 0.1)
             }
+        }
+    }
+    @media (max-width: 768px) {
+        select, 
+        input {
+           width: 180px;
+           font-size: 12px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        select, 
+        input {
+            width: 400px;
+            margin: 0 auto;
+            margin-bottom: 10px;
         }
     }
 `

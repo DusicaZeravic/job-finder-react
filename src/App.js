@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Switch } from 'react-router-dom';
 import { getJobs } from './service';
 import Navbar from './components/navbar/Navbar';
 import JobList from './components/jobList/JobList';
@@ -34,7 +34,7 @@ const App = () => {
         <PublicRoute exacte path='/register' Component={Register} />
         <PrivateRoute exact path='/jobs/:id/:details' user={user} Component={() => <CompanyInfo user={user} />} />
         <PrivateRoute exact path='/jobs/:id' user={user} Component={() => <JobInfo user={user} />} />
-        <PrivateRoute exact path='/jobs' user={user} Component={() => <JobList jobs={jobs} user={user} />} />
+        <PrivateRoute exact path='/jobs' user={user} Component={() => <JobList jobs={jobs} user={user} setJobs={setJobs} />} />
         <PrivateRoute exact path='/createjob' user={user} Component={() => <CreateJob jobs={jobs} setJobs={setJobs} user={user} />} />
         <PublicRoute exact path='/' Component={() => <Home jobs={jobs} />} />
       </Switch>
