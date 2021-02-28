@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StyledHome = styled.div`
     width: 100%;
-    height: 85vh;
+    min-height: 85vh;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -97,7 +97,6 @@ export const StyledCurrent = styled.div`
                 width: 100%;
                 height: 100%;
                 position: absolute;
-                /* transform: translate3d(-50%, -50%, 0) scale(1.015) rotate(0.5deg); */
                 border-radius: 1% 1% 2% 4% / 2% 6% 5% 4%;
             }
 

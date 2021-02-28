@@ -41,7 +41,10 @@ export const StyledLoginForm = styled.div`
         width: 350px;
         border-radius: 2px;
         text-indent: 25px
-        
+    }
+
+    input:focus {
+        box-shadow: 0 0 0 2px rgba(216, 219, 33, 0.4);
     }
 
     input[type="submit"] {

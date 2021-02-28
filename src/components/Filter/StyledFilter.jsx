@@ -2,8 +2,6 @@ import styled from 'styled-components';
 
 export const StyledFilter = styled.div`
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     flex-wrap: wrap;
     margin-bottom: 100px;
     width: 80%;
@@ -32,22 +30,6 @@ export const StyledFilter = styled.div`
                 font-weight: bold;
                 background-color: rgba(75, 75, 75, 0.1)
             }
-        }
-    }
-    @media (max-width: 768px) {
-        select, 
-        input {
-           width: 180px;
-           font-size: 12px;
-        }
-    }
-
-    @media (max-width: 600px) {
-        select, 
-        input {
-            width: 400px;
-            margin: 0 auto;
-            margin-bottom: 10px;
         }
     }
 `

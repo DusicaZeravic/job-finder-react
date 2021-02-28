@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const StyledJobList = styled.div`
     width: 100%;
+    min-height: 85vh;
     display: flex;
     flex-direction: column;
     margin: 100px auto 30px auto;

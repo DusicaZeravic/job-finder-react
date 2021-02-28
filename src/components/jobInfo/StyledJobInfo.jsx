@@ -3,13 +3,13 @@ import styled from 'styled-components';
 export const StyledJobInfo = styled.div`
     width: 100%;
     min-height: 85vh;
-    display: flex;
+    display: flex; 
     flex-direction: column;
     justify-content: center;
     align-items: center;
     &::after {
         content: ' ';
-        border-top: 85vh solid transparent;
+        border-top: 80vh solid transparent;
         border-right: 100vW solid #fffa65;
         width: 0;
         position: absolute;

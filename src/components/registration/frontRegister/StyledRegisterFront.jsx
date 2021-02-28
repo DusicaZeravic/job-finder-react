@@ -5,7 +5,6 @@ export const StyledRegisterFront = styled.div`
 
     form {
         width: 100%;
-        height: 100%;
         display: flex;
         flex-direction: column;
         padding: 30px;
@@ -47,8 +46,14 @@ export const StyledRegisterFront = styled.div`
 
         ul li input {
             border: 2px solid #eee;
+            border-radius: 3px;
             outline: none;
             padding: 8px 20px;
+            &:hover,
+            &:focus-within {
+                background-color: #eee;
+
+            }
         }
 
         input[type="submit"] {

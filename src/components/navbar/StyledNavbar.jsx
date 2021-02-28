@@ -3,27 +3,32 @@ import styled from 'styled-components';
 export const StyledNavbar = styled.nav`
     width: 100%;
     height: 10vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+    position: sticky;
+    top: 0;
+    z-index: 2;
     font-size: 15px;
     background-color: #fffa65;
-
-    a {
-        text-decoration: none;
-        text-transform: uppercase;
-        font-weight: bold;
-        color: #4b4b4b;
-
-        &:focus {
-            font-size: 17px;
+        label,
+        #hamburger {
+            display: none;
         }
-    }
-
-    .logged-user {
-        width: 20%;
+    
+    .items {
         display: flex;
-        justify-content: space-between;
+        a {
+            width: 25%;
+            padding: 28px;
+            text-decoration: none;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: #4b4b4b;
+        }
+        .logged-user {
+        width: 45%;
+        padding: 15px;
+        display: flex; 
+        justify-content: space-around;
         
         span {
             background-color: rgba(255, 242, 0, 0.8);
@@ -32,6 +37,7 @@ export const StyledNavbar = styled.nav`
             font-size: 17px;
             letter-spacing: 1px;
             border-radius: 5px;
+           
         }
 
         button {
@@ -72,54 +78,56 @@ export const StyledNavbar = styled.nav`
             }
         }
     }
+}
 
     @media (max-width: 768px) {
-        .logged-user {
-            width: 30%;
+        label {
+            display: inline-block;
+            color: #4b4b4b;
+            background-color: #fff200;
+            font-size: 25px;
+            font-weight: bold;
+            padding: 20px;
         }
-         span {
-            margin-right: 10px;
+
+        input:checked ~ .items {
+            display: block;
         }
-    }
 
-    @media (max-width: 600px) {
-        .logged-user {
-            width: 40%;
+        .items {
+            display: none;
         }
-    }
-`
 
-export const LeftStyledNavbar = styled.div`
-    width: 20%;
-    display: flex;
-    justify-content: space-around;
-    margin-left: -70px;
-
-    @media (max-width: 768px) {
-        width: 30%;
-    }
-
-    @media (max-width: 600px) {
-        margin-left: -20px;
-    }
-
-    @media (max-width: 360px) {
-        width: 50%;
-        margin-left: -5px;
-    }
-`
-export const RightStyledNavbar = styled.div`
-    width: 20%;
-    display: flex;
-    justify-content: space-between;
-    margin-left: 70px;
-
-    @media (max-width: 768px) {
-        width: 30%;
-    }
-
-    @media (max-width: 360px) {
-        width: 60%;
+        .items a {
+            display: block;
+            width: 100%;
+            border-top: 1px solid #fff200;
+            background-color: rgba(255, 250, 101, 1);
+            padding: 20px;
+            &:hover {
+                background-color: #fff200;
+            }
+        }
+        .items {
+            .logged-user {
+                display: block;
+                width: 100%;
+                border-top: 1px solid #fff200;
+                background-color: rgba(255, 250, 101, 1);
+                text-align: center;
+                padding: 10px;
+                &:hover {
+                    background-color: #fff200;
+                    span {
+                        background-color: #fffa65;
+                    }
+                }
+                span {
+                    margin-right: 50px;
+                }
+        }
+        }
+        
     }
 `
 
