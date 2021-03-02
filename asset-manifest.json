@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/job-finder-react/static/js/main.973f2d01.chunk.js",
-    "main.js.map": "/job-finder-react/static/js/main.973f2d01.chunk.js.map",
+    "main.js": "/job-finder-react/static/js/main.4879a768.chunk.js",
+    "main.js.map": "/job-finder-react/static/js/main.4879a768.chunk.js.map",
     "runtime-main.js": "/job-finder-react/static/js/runtime-main.26cb5547.js",
     "runtime-main.js.map": "/job-finder-react/static/js/runtime-main.26cb5547.js.map",
     "static/js/2.e0211970.chunk.js": "/job-finder-react/static/js/2.e0211970.chunk.js",
@@ -12,6 +12,6 @@
   "entrypoints": [
     "static/js/runtime-main.26cb5547.js",
     "static/js/2.e0211970.chunk.js",
-    "static/js/main.973f2d01.chunk.js"
+    "static/js/main.4879a768.chunk.js"
   ]
 }
