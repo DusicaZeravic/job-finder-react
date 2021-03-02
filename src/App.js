@@ -19,10 +19,15 @@ const App = () => {
   const [jobs, setJobs] = useState([]);
 
   useEffect(() => {
+    let mounted = true;
     getJobs().then(res => {
-      console.log(res.data);
-      setJobs(res.data);
+      if (mounted) {
+        setJobs(res.data);
+      }
     })
+    return function cleanup () {
+      mounted = false
+    };
   }, []);
 
   return (
@@ -36,7 +41,7 @@ const App = () => {
         <PrivateRoute exact path='/jobs/:id' user={user} Component={() => <JobInfo user={user} />} />
         <PrivateRoute exact path='/jobs' user={user} Component={() => <JobList jobs={jobs} user={user} setJobs={setJobs} />} />
         <PrivateRoute exact path='/createjob' user={user} Component={() => <CreateJob jobs={jobs} setJobs={setJobs} user={user} />} />
-        <PublicRoute exact path='/' Component={() => <Home jobs={jobs} />} />
+        <PublicRoute exact path='/' Component={() => <Home jobs={jobs} user={user} />} />
       </Switch>
       <Footer />
     </Router>

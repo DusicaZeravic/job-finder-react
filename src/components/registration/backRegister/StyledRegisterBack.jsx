@@ -22,12 +22,15 @@ export const StyledRegisterBack = styled.div`
         }
 
         p {
-            padding: 10px 100px;
+            width: 80%;
+            height: 70px;
+            line-height: 70px;
             background-color: rgba(0, 128, 0, 0.4);
             color: #fafafa;
+            font-size: 18px;
             margin-bottom: 100px;
             font-weight: bold;
-            border-radius: 2px;
+            border-radius: 3px;
             letter-spacing: 1px;
         }
 
@@ -43,6 +46,33 @@ export const StyledRegisterBack = styled.div`
             &:hover {
                 background-color: rgba(255, 250, 101, 1);
             }
+        }
+    }
+
+    @media (max-width: 768px) {
+       div p {
+           font-size: 15px;
+       }
+    }
+
+    @media (max-width: 600px) {
+        div p {
+            font-size: 12px;
+        }
+    }
+
+    @media (max-width: 440px) {
+        display: flex;
+        justify-content: center;
+        div p {
+            padding: 5px 2px;
+            line-height: 30px;
+        }
+    }
+
+    @media (max-width: 360px) {
+        div p {
+            padding: 5px 1px;
         }
     }
       

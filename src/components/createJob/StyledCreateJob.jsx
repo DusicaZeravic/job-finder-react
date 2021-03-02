@@ -42,6 +42,10 @@ export const StyledForm = styled.form`
                 margin: 10px 0 20px 0;
                 border: 2px solid #eee;;
                 border-radius: 2px;
+                &:focus {
+                    box-shadow: 0 0 0 2px rgba(216, 219, 33, 0.4);
+                }
+
             }
         }
     }

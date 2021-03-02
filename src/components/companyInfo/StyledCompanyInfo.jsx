@@ -8,7 +8,6 @@ export const StyledCompanyInfo = styled.div`
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    margin-bottom: 40px;
 `
 
 export const StyledLeft = styled.div`
@@ -55,7 +54,7 @@ export const StyledLeft = styled.div`
     } 
 
     div {
-       display: flex;
+        display: flex;
         align-items: center;
         span {             
             font-size: 25px;
@@ -88,6 +87,41 @@ export const StyledLeft = styled.div`
             opacity: 1;
         }
     }
+
+    @media (max-width: 768px) {
+        margin-bottom: 60px;
+    }
+
+    @media (max-width: 440px) {
+        h2 {
+            font-size: 23px;
+            padding: 15px 10px;
+        }
+        div {
+            margin-left: 20px;
+        }
+    }
+
+    @media (max-width: 360px) {
+        h2 {
+            font-size: 20px;
+            padding: 15px 10px;
+        }
+        h3 {
+            font-size: 18px;
+        }
+        div {
+            margin-left: 20px;
+        }
+        div span {
+            font-size: 20px;
+            margin: 0 10px;
+        }
+        ul li {
+            font-size: 15px;
+            margin-left: 50px;
+        }
+    }
 `
 
 export const StyledRight = styled.div`
@@ -110,4 +144,28 @@ export const StyledRight = styled.div`
         font-weight: 600;
     }
 
+    @media (max-width: 440px) {
+        p:first-child {
+            font-size: 13px;
+            padding: 10px 10px;
+            margin: 0;
+        }
+        p:last-child {
+            font-size: 14px;
+        }
+    }
+
+    @media (max-width: 360px) {
+        p:first-child {
+            font-size: 12px;
+            padding-top: 50px;
+            margin: 0;
+        }
+
+        p:last-child {
+            font-size: 13px;
+            margin: 0;
+            padding: 0 0 40px 30px;
+        }
+    }
 `

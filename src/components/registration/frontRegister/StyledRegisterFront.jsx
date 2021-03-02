@@ -2,12 +2,17 @@ import styled from 'styled-components';
 
 export const StyledRegisterFront = styled.div`
     width: 100%;
+    min-height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     form {
         width: 100%;
+        min-height: 500px;
         display: flex;
         flex-direction: column;
-        padding: 30px;
+        padding: 10px 30px;
         box-shadow: 1px 5px 12px 0px rgba(0,0,0,0.4);
         text-align: center;
         color: #4b4b4b;
@@ -49,7 +54,7 @@ export const StyledRegisterFront = styled.div`
             border-radius: 3px;
             outline: none;
             padding: 8px 20px;
-            &:hover,
+            &:hover:not(input[type="submit"]),
             &:focus-within {
                 background-color: #eee;
 
@@ -77,5 +82,32 @@ export const StyledRegisterFront = styled.div`
             text-align: center;
             font-weight: bold;
         }
+    }
+
+    @media (max-width: 768px) {
+       form {
+           height: 350px;
+           h2 {
+               font-size: 20px;
+               margin: 20px 0 10px 0;
+           }
+           ul li label {
+               font-size: 12px;
+               margin: 0 auto;
+           }
+           ul li input {
+            padding: 5px 20px;
+           }
+       }
+    }
+
+    @media (max-width: 500px) {
+        form {
+            width: 150%;
+            h2 {
+                font-size: 15px;
+            }
+        }
+        
     }
 `

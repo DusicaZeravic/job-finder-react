@@ -11,15 +11,6 @@
       "role": "admin"
     },
     {
-      "id": 2,
-      "username": "JackS",
-      "firstName": "Jack",
-      "lastName": "Sparrow",
-      "email": "jack87@gmail.com",
-      "password": "1234567a",
-      "confirm_password": "1234567a"
-    },
-    {
       "id": 3,
       "username": "DusicaZ",
       "firstName": "Dusica",

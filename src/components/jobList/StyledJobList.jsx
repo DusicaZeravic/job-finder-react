@@ -24,6 +24,7 @@ export const StyledJobList = styled.div`
     }
 
     @media (max-width: 768px) {
+        margin: 100px 0 10px 0;
         .current-state {
             font-size: 25px;
         }
@@ -32,6 +33,15 @@ export const StyledJobList = styled.div`
     @media (max-width: 600px) {
         .current-state {
             font-size: 20px;
+        }
+    }
+
+    @media (max-width: 440px) {
+        .empty-filter {
+            padding: 10px;
+            text-align: center;
+            font-size: 15px;
+            margin: 20px 0 100px 0;
         }
     }
 
@@ -61,13 +71,19 @@ export const StyledCreateNew = styled.div`
         background-color: #fffa65;
         color: #4b4b4b;
         border-radius: 2px;
+        box-shadow: 0.3em 0.3em 0 0 #fff200, inset 0.3em 0.3em 0 0 #fff200;
         &:before {
             content: '+';
             padding-right: 20px;
             font-size: 17px;
+        }
+        &:hover,
+        &:focus {
+            box-shadow: 0 0 0 #fff200, inset 6em 3.5em 0 0 #fff200;
+            color: #4b4b4b;
         } 
         &:hover {
-            background-color: #fff200;
+            background-color: #fffa65;
         }
     }
 

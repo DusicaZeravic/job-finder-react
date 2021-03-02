@@ -110,4 +110,8 @@ export const StyledInnerDiv = styled.div`
             font-size: 12px;
         }
     }
+
+    @media (max-width: 360px) {
+        margin: 30px 0;
+    }
 `

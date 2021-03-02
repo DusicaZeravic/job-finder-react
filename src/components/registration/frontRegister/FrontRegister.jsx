@@ -1,23 +1,11 @@
-import { useState } from 'react';
-// import { useHistory } from 'react-router-dom';
+import { useRegister } from '../../hooks/useRegister';
+import { useRegisterError } from '../../hooks/useRegisterError';
 import { getUsers, postUser } from '../../../service';
 import { StyledRegisterFront } from './StyledRegisterFront';
 
 const FrontRegister = ({ rotate }) => {
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [confirmedPassword, setConfirmedPassword] = useState('');
-
-    const [firstNameError, setFirstNameError] = useState('');
-    const [lastNameError, setLastnameError] = useState('');
-    const [emailError, setEmailError] = useState('');
-    const [passwordError, setPasswordError] = useState('');
-    const [confirmedPasswordError, setConfirmedPasswordError] = useState('');
-    const [uniqueError, setUniqueError] = useState('');
-
-    // const history = useHistory();
+    const [firstName, setFirstName, lastName, setLastName, email, setEmail, password, setPassword, confirmedPassword, setConfirmedPassword] = useRegister();
+    const [firstNameError, setFirstNameError, lastNameError, setLastNameError, emailError, setEmailError, passwordError, setPasswordError, confirmedPasswordError, setConfirmedPasswordError, uniqueError, setUniqueError] = useRegisterError();
 
     const validateEmail = (email) => {
         const emailRegEx = /\S+@\S+\.\S+/;
@@ -36,9 +24,9 @@ const FrontRegister = ({ rotate }) => {
             setFirstNameError('');
         }
         if (lastName.trim() === '') {
-            setLastnameError('You must enter your last name!');
+            setLastNameError('You must enter your last name!');
         } else {
-            setLastnameError('');
+            setLastNameError('');
         }
         if (!validateEmail(email)) {
             setEmailError('Invalid email format!')
@@ -96,7 +84,6 @@ const FrontRegister = ({ rotate }) => {
                         postUser(newUser).then(() => {
                             setUniqueError('');
                             clearAllInputs();
-                            // history.push('/login');
                             rotate();
                         })
                     } else {

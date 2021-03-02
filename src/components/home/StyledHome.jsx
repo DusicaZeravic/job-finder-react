@@ -12,7 +12,7 @@ export const StyledHome = styled.div`
     background-size: 100% 100%;
     opacity: 0.85;
 
-    h1 {
+    marquee {
         text-transform: uppercase;
         color: #4b4b4b;
         font-size: 40px;

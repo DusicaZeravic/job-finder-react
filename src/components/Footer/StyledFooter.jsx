@@ -3,8 +3,9 @@ import styled from 'styled-components';
 export const StyledFooter = styled.footer`
     width: 100%;
     height: 5vh;
-    position: absolute;
-    bottom: 0;
+    /* position: absolute;
+    bottom: 0; */
+    /* margin-top: 40px; */
     p {
         text-align: center;
         font-size: 15px;

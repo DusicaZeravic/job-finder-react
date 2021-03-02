@@ -1,24 +1,10 @@
-import { useState } from 'react';
+import { usePostJob } from '../hooks/usePostJob';
 import { Redirect } from 'react-router-dom';
 import { postJob } from '../../service';
 import { StyledButton, StyledCreateJob, StyledForm, StyledJobInfo, StyledCompanyInfo, StyledErrorMsg, StyledSuccessMsg } from './StyledCreateJob';
 
 const CreateJob = ({ user, jobs, setJobs }) => {
-    const [jobTitle, setJobTitle] = useState('');
-    const [jobLocation, setJobLocation] = useState('');
-    const [seniority, setSeniority] = useState('');
-    const [jobCategory, setJobCategory] = useState('');
-    const [jobSnippet, setJobSnippet] = useState('');
-    const [jobDescription, setJobDescription] = useState('');
-    const [companyName, setCompanyName] = useState('');
-    const [companyInfo, setCompanyInfo] = useState('');
-    const [location, setLocation] = useState('');
-    const [employeesNumber, setEmployeesNumber] = useState('');
-    const [phone, setPhone] = useState('');
-    const [email, setEmail] = useState('');
-    const [url, setUrl] = useState('');
-    const [error, setError] = useState('');
-    const [successMessage, setSuccessMessage] = useState('');
+    const [jobTitle, setJobTitle, jobLocation, setJobLocation, seniority, setSeniority, jobCategory, setJobCategory, jobSnippet, setJobSnippet, jobDescription, setJobDescription, companyName, setCompanyName, companyInfo, setCompanyInfo, location, setLocation, employeesNumber, setEmployeesNumber, phone, setPhone, email, setEmail, url, setUrl, errorMessage, setErrorMessage, successMessage, setSuccessMessage] = usePostJob();
 
     let categories = Array.from(new Set(jobs.map(job => job.category)));
     let levels = Array.from(new Set(jobs.map(job => job.seniority)));
@@ -37,9 +23,9 @@ const CreateJob = ({ user, jobs, setJobs }) => {
 
     const isValid = () => {
         if (jobTitle.trim() === '' || jobLocation.trim() === '' || seniority === '' || jobCategory === '' || jobSnippet.trim() === '' || jobDescription.trim() === '' || companyName.trim() === '' || companyInfo.trim() === '' || location.trim() === '' || employeesNumber.trim() === '' || phone.trim() === '' || email.trim() === '' || url.trim() === '') {
-            setError(<p className="error-msg">All fields must be filled!</p>);
+            setErrorMessage(<p className="error-msg">All fields must be filled!</p>);
             setTimeout(() => {
-                setError('');
+                setErrorMessage('');
             }, 2000);
             return false;
         } else {
@@ -88,8 +74,8 @@ const CreateJob = ({ user, jobs, setJobs }) => {
                     <h3><span>Job Info</span></h3>
                     <ul>
                         <li>
-                            <label>Job Title</label>
-                            <input type="text" className="form-control" placeholder="Job Title..." onChange={(e) => setJobTitle(e.target.value)} />
+                            <label htmlFor="title">Job Title</label>
+                            <input type="text" name="title" className="form-control" placeholder="Job Title..." onChange={(e) => setJobTitle(e.target.value)} />
                         </li>
                         <li>
                             <label>Location</label>
@@ -98,7 +84,7 @@ const CreateJob = ({ user, jobs, setJobs }) => {
                         <li>
                             <p>Seniority</p>
                             {levels.map(level => <div className="seniority" key={level}>
-                                <input type="radio" name="seniority" value={level} onChange={(e) => setSeniority(e.target.value)} />
+                                <input type="radio" name="seniority" id={level} value={level} onChange={(e) => setSeniority(e.target.value)} />
                                 <label className="seniority-label" htmlFor={level}>{level}</label>
                             </div>
                             )}
@@ -155,7 +141,7 @@ const CreateJob = ({ user, jobs, setJobs }) => {
                     </ul>
                 </StyledCompanyInfo>
                 <StyledErrorMsg>
-                    {error}
+                    {errorMessage}
                 </StyledErrorMsg>
                 <StyledSuccessMsg>
                     {successMessage}

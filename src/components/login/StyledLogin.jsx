@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StyledLogin = styled.div`
     width: 100%;
-    height: 85vh;
+    min-height: 85vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,7 +43,7 @@ export const StyledLoginForm = styled.div`
         text-indent: 25px
     }
 
-    input:focus {
+    input:focus:not(input[type="submit"]) {
         box-shadow: 0 0 0 2px rgba(216, 219, 33, 0.4);
     }
 
@@ -89,6 +89,11 @@ export const StyledLoginForm = styled.div`
 
    @media (max-width: 768px) {
        height: 550px;
+       margin: 60px 0;
+   }
+
+   @media (max-width: 360px) {
+      height: 600px
    }
 `
 

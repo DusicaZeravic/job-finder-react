@@ -5,7 +5,7 @@ export const StyledNavbar = styled.nav`
     height: 10vh;
     position: sticky;
     top: 0;
-    z-index: 2;
+    z-index: 999;
     font-size: 15px;
     background-color: #fffa65;
         label,
@@ -18,11 +18,15 @@ export const StyledNavbar = styled.nav`
         a {
             width: 25%;
             padding: 28px;
+            font-size: 15px;
             text-decoration: none;
             text-align: center;
             text-transform: uppercase;
             font-weight: bold;
             color: #4b4b4b;
+            &:hover {
+                background-color: #fff200;
+            }
         }
         .logged-user {
         width: 45%;
@@ -87,7 +91,7 @@ export const StyledNavbar = styled.nav`
             background-color: #fff200;
             font-size: 25px;
             font-weight: bold;
-            padding: 20px;
+            padding: 16px;
         }
 
         input:checked ~ .items {

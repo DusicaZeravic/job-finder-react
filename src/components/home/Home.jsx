@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { StyledHome, StyledDiv, StyledCurrent, StyledPrevious, StyledNext } from "./StyledHome"
 
-const Home = ({ jobs }) => {
+const Home = ({ jobs, user }) => {
     const [current, setCurrent] = useState(0);
 
     const previousJob = () => current === 0 ? setCurrent(Math.floor((jobs.length / 2)) - 1) : setCurrent(current - 1);
@@ -10,7 +10,7 @@ const Home = ({ jobs }) => {
 
     return (
         <StyledHome>
-            <h1>Find your dream job</h1>
+            <marquee direction="left" height="100" width="1000" scrollamount="20" bgcolor="white">Find Your Dream Job</marquee>
             <StyledDiv>
                 <StyledPrevious onClick={previousJob}>
                     <i className="fas fa-chevron-left"></i>
@@ -23,7 +23,10 @@ const Home = ({ jobs }) => {
                     <i className="fas fa-chevron-right"></i>
                 </StyledNext>
             </StyledDiv>
-            <Link to='/login'>You want to see more about these jobs? Log in!</Link>
+            {user ?
+                <Link to='/jobs'>You want to see more about these jobs? Click here!</Link>
+                :
+                <Link to='/login'>You want to see more about these jobs? Click here!</Link>}
         </StyledHome>
     )
 }
