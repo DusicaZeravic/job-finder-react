@@ -64,8 +64,8 @@ const CreateJob = ({ user, jobs, setJobs }) => {
                         }
                     };
 
-                    postJob(newJob).then(() => {
-                        setJobs(prev => [...prev, newJob]);
+                    postJob(newJob).then(res => {
+                        setJobs(prev => [...prev, res.data]);                       
                     });
                 }
             }}>

@@ -734,27 +734,6 @@
         ],
         "link": "https://www.sevenbridges.com/"
       }
-    },
-    {
-      "id": 36,
-      "title": "Java Developer",
-      "location": "Beograd",
-      "seniority": "medior",
-      "category": "Software-development",
-      "createdAt": "10.02.2021.",
-      "snippet": "Are you curious, motivated, and forward-thinking? At FIS you’ll have the opportunity to work on some of the most challenging and relevant issues in financial services and technology. Our talented people empower us, and we believe in being part of a team that is open, collaborative, entrepreneurial, passionate and above all fun.",
-      "job_description": "You would be a part of the team developing a real-time system for processing of foreign exchange products, including support for a customer dealing portal, interfacing to third party platforms/systems, trade capture, position/risk management, confirmation/settlement, and accounting. The system has web-based user interface and a rich technology stack.",
-      "company_info": {
-        "name": "FIS",
-        "general_info": "FIS is a leader in technology and services that helps businesses and communities thrive by advancing commerce and the financial world. Headquartered in Jacksonville, Florida, FIS employs more than 55,000 people across 50+ countries, dedicated to helping our clients be ahead of what’s next. FIS offers more than 450 solutions and processes over $75b of transactions around the planet. FIS is a Fortune 500® company and is a member of Standard & Poor’s 500® Index.",
-        "location": "Jacksonville, Florida United States",
-        "number_of_employees": "10,001+",
-        "contact": [
-          "+1 877.776.3706",
-          "getinfo@fisglobal.com"
-        ],
-        "link": "https://www.fisglobal.com/"
-      }
     }
   ]
 }

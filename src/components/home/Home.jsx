@@ -10,7 +10,7 @@ const Home = ({ jobs, user }) => {
 
     return (
         <StyledHome>
-            <marquee direction="left" height="100" width="1000" scrollamount="20" bgcolor="white">Find Your Dream Job</marquee>
+            <h1>Find Your Dream Job</h1>
             <StyledDiv>
                 <StyledPrevious onClick={previousJob}>
                     <i className="fas fa-chevron-left"></i>

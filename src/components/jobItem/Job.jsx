@@ -14,6 +14,7 @@ const Job = ({ job, setJobs, user }) => {
             {user.role === 'admin' ? <StyledDeleteButton onClick={() => {
                 deleteJobById(job.id).then(() => {
                     setJobs(prev => prev.filter(el => el.id !== job.id))
+                    console.log('obrisan')
                 })
             }}>Delete</StyledDeleteButton> : ''}
         </StyledJobItem>

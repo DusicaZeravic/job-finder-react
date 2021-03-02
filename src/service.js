@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:8000';
+const BASE_URL = 'https://my-json-server.typicode.com/DusicaZeravic/job-Finder-JSON-server';
 const JOBS = '/jobs';
 const USERS = '/users';
 

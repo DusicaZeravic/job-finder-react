@@ -12,13 +12,29 @@ export const StyledHome = styled.div`
     background-size: 100% 100%;
     opacity: 0.85;
 
-    marquee {
+    h1 {
         text-transform: uppercase;
         color: #4b4b4b;
         font-size: 40px;
         letter-spacing: 5px;
-        margin-top: 100px;
-        text-shadow: 7px 7px 14px rgba(150, 150, 150, 0.83);    
+        text-shadow: 7px 7px 14px rgba(150, 150, 150, 0.83);
+        overflow: hidden;
+        border-right: .10em solid #4b4b4b;
+        white-space: nowrap;
+        margin: 100px auto 20px auto;
+        letter-spacing: .15em;
+        animation: typing 3.5s steps(40, end),
+                   blink-caret .75s step-end infinite; 
+    }
+
+    @keyframes typing {
+        from {width: 0}
+        to { width: 40%}
+    }
+
+    @keyframes blink-caret {
+        from, to {border-color: transparent}
+        50% {border-color: #4b4b4b}
     }
 
     a {
@@ -77,7 +93,7 @@ export const StyledDiv = styled.div`
 export const StyledCurrent = styled.div`
         width: 80%;
         height: 40vh;
-        margin: 80px auto;
+        margin: 60px auto;
         border: 3px solid #4b4b4b;
         box-shadow: 1px 5px 16px 2px #d6cb2e;
         padding: 10px 20px;
