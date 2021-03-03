@@ -12,9 +12,9 @@ const Job = ({ job, setJobs, user }) => {
             <p>{job.snippet}</p>
             <Link to={`/jobs/${job.id}`}><button>See More</button></Link>
             {user.role === 'admin' ? <StyledDeleteButton onClick={() => {
-                deleteJobById(job.id).then(() => {
+                if(window.confirm('Are you sure you want to delete this record?')){deleteJobById(job.id).then(() => {
                     setJobs(previous => previous.filter(el => el.id !== job.id));
-                })
+                })}
             }}>Delete</StyledDeleteButton> : ''}
         </StyledJobItem>
     )
