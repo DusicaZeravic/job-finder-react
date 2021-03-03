@@ -27,10 +27,12 @@ const JobList = ({ jobs, user, setJobs }) => {
             <Filter jobs={jobs} setFilterInput={setFilterInput} setLocation={setLocation} setLevel={setLevel} />
             {user.role === 'admin' ? <StyledCreateNew><button onClick={() => history.push('/createjob')}>Create New</button></StyledCreateNew> : ''}
             {filterInput.trim() !== '' && location !== '' && level !== '' ?
-                filteredOptions.map(job => <Job key={job.id} job={job} setJobs={setJobs} user={user}/>).length > 0 ?
-                    filteredOptions.map(job => <Job key={job.id} job={job} setJobs={setJobs} user={user}/>) :
-                    <div className="empty-filter"><p>There's no result for this search!</p></div> :
-                jobs.map(job => <Job key={job.id} job={job} setJobs={setJobs} user={user}/>)
+                filteredOptions.map(job => <Job key={job.id} job={job} setJobs={setJobs} user={user} />).length > 0 ?
+                    filteredOptions.map(job => <Job key={job.id} job={job} setJobs={setJobs} user={user} />)
+                    :
+                    <div className="empty-filter"><p>There's no result for this search!</p></div>
+                :
+                jobs.map(job => <Job key={job.id} job={job} setJobs={setJobs} user={user} />)
             }
         </StyledJobList>
     )

@@ -21,7 +21,7 @@ const App = () => {
   useEffect(() => {
     let mounted = true;
     getJobs().then(res => {
-      if(mounted) {
+      if (mounted) {
         setJobs(res.data);
       }
     })

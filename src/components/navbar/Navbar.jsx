@@ -1,4 +1,4 @@
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory, NavLink } from 'react-router-dom';
 import { StyledNavbar } from './StyledNavbar';
 
 const Navbar = ({ user, setUser }) => {
@@ -8,10 +8,10 @@ const Navbar = ({ user, setUser }) => {
         <StyledNavbar>
             <label htmlFor="hamburger">&#9776;</label>
             <input type="checkbox" id="hamburger" />
-            <div className="items">
 
-                <Link to="/">Home</Link>
-                <Link to="/jobs">Job List</Link>
+            <div className="items">
+                <NavLink to="/" exact activeClassName="active">Home</NavLink>
+                <NavLink to="/jobs" exact activeClassName="active">Job List</NavLink>
                 {
                     user ?
                         <div className='logged-user'>
@@ -23,9 +23,9 @@ const Navbar = ({ user, setUser }) => {
                             }>Logout</button>
 
                         </div> :
-                        <>  
-                            <Link className="push-right" to="/login">Login</Link>
-                            <Link className="push-right" to="/register">Registration</Link>
+                        <>
+                            <NavLink className="push-right" to="/login" exact activeClassName="active">Login</NavLink>
+                            <NavLink className="push-right" to="/register" exact activeClassName="active">Registration</NavLink>
                         </>
                 }
             </div>

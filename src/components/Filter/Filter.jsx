@@ -1,7 +1,6 @@
 import { StyledFilter } from "./StyledFilter";
 
 const Filter = ({ jobs, setFilterInput, setLocation, setLevel }) => {
-
     let locationArr = Array.from(new Set(jobs.map(job => job.location)));
     let levels = Array.from(new Set(jobs.map(job => job.seniority)));
 

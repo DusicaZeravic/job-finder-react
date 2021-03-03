@@ -9,7 +9,7 @@ export const StyledHome = styled.div`
     background-image: url('/background.jpg');
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: cover;
     opacity: 0.85;
 
     h1 {
@@ -34,7 +34,7 @@ export const StyledHome = styled.div`
 
     @keyframes blink-caret {
         from, to {border-color: transparent}
-        50% {border-color: #4b4b4b}
+        40% {border-color: #4b4b4b}
     }
 
     a {
@@ -49,7 +49,7 @@ export const StyledHome = styled.div`
 
     @media (max-width: 768px) {
         height: 90vh;
-        background-repeat: no-repeat;
+        background-size: 100% 100%;
         h1 {
             font-size: 35px;
         }

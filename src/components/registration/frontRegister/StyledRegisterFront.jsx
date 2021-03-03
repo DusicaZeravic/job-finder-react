@@ -86,7 +86,7 @@ export const StyledRegisterFront = styled.div`
 
     @media (max-width: 768px) {
        form {
-           height: 350px;
+           min-height: 500px;
            h2 {
                font-size: 20px;
                margin: 20px 0 10px 0;
@@ -97,6 +97,12 @@ export const StyledRegisterFront = styled.div`
            }
            ul li input {
             padding: 5px 20px;
+           }
+           input[type="submit"] {
+               margin-top: 40px;
+           }
+           .error-msg {
+               margin: 1px 0;
            }
        }
     }

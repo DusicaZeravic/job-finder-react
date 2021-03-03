@@ -6,6 +6,26 @@ export const StyledLogin = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    &::after {
+        content: '';
+        background-image: url('/background1.jpg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        opacity: 0.3;
+        top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+    }
+
+    @media (max-width: 768px) {
+        &::after {
+            background-size: 100% 100%;
+        }
+    }
 `
 
 export const StyledLoginForm = styled.div`
@@ -88,12 +108,19 @@ export const StyledLoginForm = styled.div`
    }
 
    @media (max-width: 768px) {
-       height: 550px;
+       min-height: 550px;
        margin: 60px 0;
    }
 
    @media (max-width: 360px) {
-      height: 600px
+      height: 600px;
+      width: 330px;
+      h2 {
+          font-size: 18px;
+      }
+      form input {
+        width: 300px;
+      }
    }
 `
 
@@ -110,5 +137,14 @@ export const StyledLogo = styled.div`
         line-height: 150px;
         display: flex;
         justify-content: center;
+    }
+
+    @media (max-width: 360px) {
+        width: 100px;
+        height: 100px;
+        i {
+            font-size: 50px;
+            line-height: 100px;
+        }
     }
 `

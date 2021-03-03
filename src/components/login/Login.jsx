@@ -14,12 +14,12 @@ const Login = ({ setUser }) => {
 
     const isValid = (user) => {
         if (email.trim() !== user?.email) {
-            setEmailError('Incorrect email address!')
+            setEmailError('Incorrect email address!');
         } else {
             setEmailError('');
         }
         if (password.trim() !== user?.password) {
-            setPasswordError('Incorrect password!')
+            setPasswordError('Incorrect password!');
         } else {
             setPasswordError('');
         }
@@ -39,7 +39,6 @@ const Login = ({ setUser }) => {
                     if (user) {
                         setUser(user);
                         history.push('/jobs');
-
                     } else {
                         isValid(user);
                     }

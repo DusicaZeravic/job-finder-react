@@ -28,6 +28,11 @@ export const StyledNavbar = styled.nav`
                 background-color: #fff200;
             }
         }
+
+        .active {
+            background-color: #fff200;
+        }
+
         .logged-user {
         width: 45%;
         padding: 15px;

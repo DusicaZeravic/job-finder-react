@@ -8,6 +8,17 @@ export const StyledCompanyInfo = styled.div`
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    animation: appear 2s;
+
+    
+    @keyframes appear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 `
 
 export const StyledLeft = styled.div`

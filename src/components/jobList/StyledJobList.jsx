@@ -68,6 +68,7 @@ export const StyledCreateNew = styled.div`
         border: none;
         outline: none;
         font-size: 17px;
+        font-weight: bold;
         background-color: #fffa65;
         color: #4b4b4b;
         border-radius: 2px;
@@ -75,7 +76,7 @@ export const StyledCreateNew = styled.div`
         &:before {
             content: '+';
             padding-right: 20px;
-            font-size: 17px;
+            font-size: 18px;
         }
         &:hover,
         &:focus {

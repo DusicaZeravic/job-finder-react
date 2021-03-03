@@ -9,7 +9,7 @@ export const StyledJobInfo = styled.div`
     align-items: center;
     &::after {
         content: ' ';
-        border-top: 80vh solid transparent;
+        border-top: 85vh solid transparent;
         border-right: 100vW solid #fffa65;
         width: 0;
         position: absolute;
@@ -23,6 +23,7 @@ export const StyledInnerDiv = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    animation: slide 2s;
 
     h1 {
         text-transform: uppercase;
@@ -71,6 +72,17 @@ export const StyledInnerDiv = styled.div`
         background: #4b4b4b;
         color: #fafafa;
     }
+
+    @keyframes slide {
+    from {
+        opacity: 0;
+        transform: translateY(150px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
     @media (max-width: 768px) {
         h1 {

@@ -2,15 +2,15 @@ import { useState } from 'react';
 import { StyledCard } from './StyledCard';
 
 const RegisterCard = ({ Front, Back, isFront, setIsFront }) => {
-    const [transform, setTransform] = useState('');
+    const [classRotate, setClassRotate] = useState('');
 
     const rotate = () => {
             setIsFront(false);
-            setTransform('rotate');
+            setClassRotate('rotate');
     }
 
     return (
-        <StyledCard className={transform}>
+        <StyledCard className={classRotate}>
             {
                 isFront ? <Front rotate={rotate} /> : <Back />
             }

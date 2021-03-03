@@ -41,7 +41,6 @@ export const StyledRegisterBack = styled.div`
             text-transform: uppercase;
             padding: 10px 30px;
             border-radius: 2px;
-            font-weight: bold;
             background-color: rgba(255, 250, 101, 0.5);
             &:hover {
                 background-color: rgba(255, 250, 101, 1);

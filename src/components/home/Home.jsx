@@ -5,8 +5,8 @@ import { StyledHome, StyledDiv, StyledCurrent, StyledPrevious, StyledNext } from
 const Home = ({ jobs, user }) => {
     const [current, setCurrent] = useState(0);
 
-    const previousJob = () => current === 0 ? setCurrent(Math.floor((jobs.length / 2)) - 1) : setCurrent(current - 1);
     const nextJob = () => jobs.length - 1 === current ? setCurrent(0) : setCurrent(current + 1);
+    const previousJob = () => current === 0 ? setCurrent(Math.floor((jobs.length / 2)) - 1) : setCurrent(current - 1);
 
     return (
         <StyledHome>
