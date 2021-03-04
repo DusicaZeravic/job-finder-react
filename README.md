@@ -1,7 +1,9 @@
 # Job Finder App
 
 ## Short description
-    The Job Finder App is an application that was created as a final project within the ITBootcamp course. The application is a simple version of the job search portal. It is possible to log in and register new users. Logged-in users can view jobs, while admin has the ability to add a new job, as well as delete existing ones.
+    - The Job Finder App is an application that was created as a final project within the ITBootcamp course. 
+    - The application is a simple version of the job search portal. It is possible to log in and register new users.
+    - Logged-in users can view jobs, while admin has the ability to add a new job, as well as delete existing ones.
 
 ## Technologies & Tools
     1. JavaScript
@@ -17,7 +19,7 @@
     $ Install node (version 12.19.0 or higher)
     $ Install npm 
     $ Install git
-    $ git clone [Project link] (https://github.com/DusicaZeravic/job-finder-react.git)
+    $ git clone https://github.com/DusicaZeravic/job-finder-react.git
     $ npm install
 
 ## Run the app in the development mode
