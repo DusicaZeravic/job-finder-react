@@ -18,6 +18,15 @@
       "email": "dusica@gmail.com",
       "password": "123",
       "confirm_password": "12345"
+    },
+    {
+      "id": 3,
+      "username": "AnaP",
+      "firstName": "Ana",
+      "lastName": "Peric",
+      "email": "anaperic@gmail.com",
+      "password": "anaperic1",
+      "confirm_password": "anaperic1"
     }
   ],
   "jobs": [

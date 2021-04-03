@@ -4,7 +4,7 @@ import Filter from '../Filter/Filter';
 import { StyledCreateNew, StyledJobList } from './StyledJobList';
 import { Redirect, useHistory } from 'react-router-dom';
 
-const JobList = ({ jobs, user, setJobs }) => {
+const JobList = ({ jobs, user, setJobs, savedJobs, setSavedJobs }) => {
     const [filterInput, setFilterInput] = useState('');
     const [location, setLocation] = useState('');
     const [level, setLevel] = useState('');
@@ -22,17 +22,17 @@ const JobList = ({ jobs, user, setJobs }) => {
     return user ? (
         <StyledJobList>
             <div className="current-state">
-                <p>Currently {jobs.length} open work positions for {companies.length} companies.</p>
+                <p>Currently {jobs.length} open work positions at {companies.length} companies.</p>
             </div>
             <Filter jobs={jobs} setFilterInput={setFilterInput} setLocation={setLocation} setLevel={setLevel} />
             {user.role === 'admin' ? <StyledCreateNew><button onClick={() => history.push('/createjob')}>Create New</button></StyledCreateNew> : ''}
             {filterInput.trim() !== '' && location !== '' && level !== '' ?
-                filteredOptions.map(job => <Job key={job.id} job={job} setJobs={setJobs} user={user} />).length > 0 ?
-                    filteredOptions.map(job => <Job key={job.id} job={job} setJobs={setJobs} user={user} />)
+                filteredOptions.map(job => <Job key={job._id} job={job} setJobs={setJobs} user={user} savedJobs={savedJobs} setSavedJobs={setSavedJobs} />).length > 0 ?
+                    filteredOptions.map(job => <Job key={job._id} job={job} setJobs={setJobs} user={user} savedJobs={savedJobs} setSavedJobs={setSavedJobs} />)
                     :
                     <div className="empty-filter"><p>There's no result for this search!</p></div>
                 :
-                jobs.map(job => <Job key={job.id} job={job} setJobs={setJobs} user={user} />)
+                jobs.map(job => <Job key={job._id} job={job} setJobs={setJobs} user={user} savedJobs={savedJobs} setSavedJobs={setSavedJobs} />)
             }
         </StyledJobList>
     )

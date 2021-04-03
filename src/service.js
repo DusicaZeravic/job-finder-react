@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:8000';
+const BASE_URL = 'https://app-job-finder.herokuapp.com';
 const JOBS = '/jobs';
 const USERS = '/users';
 
@@ -15,3 +15,5 @@ export const deleteJobById = (id) => axios.delete(`${BASE_URL}${JOBS}/${id}`);
 export const getUsers = () => axios.get(`${BASE_URL}${USERS}`);
 
 export const postUser = (user) => axios.post(`${BASE_URL}${USERS}`, user);
+
+export const updateUser = (user) => axios.put(`${BASE_URL}${USERS}`, user);

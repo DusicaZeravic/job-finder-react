@@ -39,11 +39,13 @@ export const StyledNavbar = styled.nav`
         display: flex; 
         justify-content: space-around;
         
-        span {
+        span,
+        .username {
             background-color: rgba(255, 242, 0, 0.8);
-            padding: 10px 30px;
+            padding: 10px 20px;
             color: #4b4b4b;
             font-size: 17px;
+            font-weight: normal;
             letter-spacing: 1px;
             border-radius: 5px;
            
@@ -107,7 +109,7 @@ export const StyledNavbar = styled.nav`
             display: none;
         }
 
-        .items a {
+        .items a:not(.username) {
             display: block;
             width: 100%;
             border-top: 1px solid #fff200;
@@ -127,7 +129,8 @@ export const StyledNavbar = styled.nav`
                 padding: 10px;
                 &:hover {
                     background-color: #fff200;
-                    span {
+                    span,
+                    .username {
                         background-color: #fffa65;
                     }
                 }

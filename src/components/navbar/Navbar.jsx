@@ -1,4 +1,4 @@
-import { useHistory, NavLink } from 'react-router-dom';
+import { useHistory, NavLink, Link } from 'react-router-dom';
 import { StyledNavbar } from './StyledNavbar';
 
 const Navbar = ({ user, setUser }) => {
@@ -15,7 +15,9 @@ const Navbar = ({ user, setUser }) => {
                 {
                     user ?
                         <div className='logged-user'>
-                            <span>{user.username}</span>
+                            {
+                                user.role !== 'admin' ? <span><Link className="username" to={`/user/${user._id}`}>{user.username}</Link></span> : <span>{user.username}</span>
+                            }
                             <button onClick={() => {
                                 setUser(null);
                                 history.push('/');

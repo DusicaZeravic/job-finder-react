@@ -1,19 +1,27 @@
 import { Link } from 'react-router-dom';
-import { deleteJobById } from '../../service';
+import { deleteJobById, updateUser } from '../../service';
 import { StyledJobItem, StyledDeleteButton } from './StyledJobItem';
 
-const Job = ({ job, setJobs, user }) => {
+const Job = ({ job, setJobs, user, savedJobs, setSavedJobs }) => {
     return (
         <StyledJobItem>
             <h3>{job.title}</h3>
-            <Link to={`/jobs/${job.id}/${job.company_info.name}`}>{job.company_info.name}</Link>
+            <Link to={`/jobs/${job._id}/${job.company_info.name}`}>{job.company_info.name}</Link>
             <div className="location"><span><i className="fas fa-map-marker-alt"></i></span><p>{job.location}</p></div>
             <p>Created At: {job.createdAt}</p>
             <p>{job.snippet}</p>
-            <Link to={`/jobs/${job.id}`}><button>See More</button></Link>
+            <Link to={`/jobs/${job._id}`}><button>See More</button></Link>
+            {/* {user.role !== 'admin' ? <button onClick={() => {
+                savedJobs.push(job._id);
+                console.log(savedJobs);
+                updateUser(user).then(res => {
+                    user = {...res.data, savedJobs};
+                })
+                console.log(user);
+            }}>Save</button> : ''} */}
             {user.role === 'admin' ? <StyledDeleteButton onClick={() => {
-                if(window.confirm('Are you sure you want to delete this record?')){deleteJobById(job.id).then(() => {
-                    setJobs(previous => previous.filter(el => el.id !== job.id));
+                if(window.confirm('Are you sure you want to delete this record?')){deleteJobById(job._id).then(() => {
+                    setJobs(previous => previous.filter(el => el.id !== job._id));
                 })}
             }}>Delete</StyledDeleteButton> : ''}
         </StyledJobItem>
