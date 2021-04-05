@@ -1,4 +1,4 @@
-import  styled  from "styled-components";
+import styled from "styled-components";
 
 export const StyledJobItem = styled.div`
     width: 80%;
@@ -22,7 +22,8 @@ export const StyledJobItem = styled.div`
         }
     }
 
-    .location {
+    .location,
+    .createdAt {
         width: 100px;
         display: flex;
         flex-direction: row;
@@ -34,6 +35,15 @@ export const StyledJobItem = styled.div`
             margin-top: 10px; 
         }
     }
+
+    .createdAt {
+        width: 125px;
+            i {
+                color: rgba(75, 75, 75, 0.8);
+                font-size: 25px;
+        }
+    }
+
 
     button:first-child {
         background-color: #fffa65;

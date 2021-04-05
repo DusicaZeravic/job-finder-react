@@ -7,18 +7,19 @@ const Job = ({ job, setJobs, user, savedJobs, setSavedJobs }) => {
         <StyledJobItem>
             <h3>{job.title}</h3>
             <Link to={`/jobs/${job._id}/${job.company_info.name}`}>{job.company_info.name}</Link>
-            <div className="location"><span><i className="fas fa-map-marker-alt"></i></span><p>{job.location}</p></div>
-            <p>Created At: {job.createdAt}</p>
+            <div className="location"><i className="fas fa-map-marker-alt"></i><p>{job.location}</p></div>
+            <div className="createdAt"><i className="fas fa-clock"></i><p>{job.createdAt}</p></div>
             <p>{job.snippet}</p>
             <Link to={`/jobs/${job._id}`}><button>See More</button></Link>
-            {/* {user.role !== 'admin' ? <button onClick={() => {
+            {user.role !== 'admin' ? <button onClick={() => {
                 savedJobs.push(job._id);
                 console.log(savedJobs);
-                updateUser(user).then(res => {
-                    user = {...res.data, savedJobs};
+                user = {...user, savedJobs};
+                updateUser(user._id, user).then(() => {
+                    console.log('updated!');
                 })
                 console.log(user);
-            }}>Save</button> : ''} */}
+            }}>Save</button> : ''}
             {user.role === 'admin' ? <StyledDeleteButton onClick={() => {
                 if(window.confirm('Are you sure you want to delete this record?')){deleteJobById(job._id).then(() => {
                     setJobs(previous => previous.filter(el => el.id !== job._id));

@@ -16,4 +16,4 @@ export const getUsers = () => axios.get(`${BASE_URL}${USERS}`);
 
 export const postUser = (user) => axios.post(`${BASE_URL}${USERS}`, user);
 
-export const updateUser = (user) => axios.put(`${BASE_URL}${USERS}`, user);
+export const updateUser = (id, user) => axios.put(`${BASE_URL}${USERS}/${id}`, user);

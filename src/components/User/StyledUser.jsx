@@ -5,14 +5,16 @@ export const StyledUser = styled.div`
     min-height: 85vh;
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
+    color: #4b4b4b;
 `
 
 export const StyledUserInfo = styled.div`
-    width: 80%;
+    width: 70%;
     height: 200px;
     background-color: #fff;
-    margin: 40px auto;
+    margin: 50px auto 0 auto;
     border-radius: 10px;
     display: flex;
     justify-content: center;
