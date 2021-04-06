@@ -5,7 +5,9 @@ const SavedJob = ({ job }) => {
     return (
         <StyledSavedJob>
             <StyledDate>
-                <span><i className="far fa-calendar-alt"></i></span><p>Application date: {job.createdAt}</p>
+                <span><i className="far fa-calendar-alt"></i></span>
+                <p>Application deadline: </p>
+                <div>{job.createdAt}</div>
             </StyledDate>
             <div className="v-line"></div>
             <StyledContent>

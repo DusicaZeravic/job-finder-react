@@ -5,7 +5,8 @@ const SavedJobs = ({ savedJobs }) => {
     return (
         <StyledSavedJobs>
             <div className="main-header">
-                <h2>Saved Jobs</h2>
+                <p>Saved Jobs</p>
+                <p>See all the ads you've saved in one place.</p>
             </div>
             {savedJobs.map(job => <SavedJob key={job._id} job={job} />)}
         </StyledSavedJobs>

@@ -7,8 +7,10 @@ export const StyledSavedJobs = styled.div`
     
     margin: 100px auto;
     .main-header {
-        margin-bottom: 20px;
-        font-size: 18px;
+        margin-bottom: 50px;
+    }
+     p:first-child {
+        font-size: 25px;
         text-transform: uppercase;
     }
 `

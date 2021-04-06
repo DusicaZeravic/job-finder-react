@@ -9,7 +9,6 @@ export const StyledCompanyInfo = styled.div`
     justify-content: center;
     flex-wrap: wrap;
     animation: appear 2s;
-
     
     @keyframes appear {
     from {

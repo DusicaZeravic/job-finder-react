@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { getJobById } from "../../service"
-import SavedJob from './SavedJob';
 import SavedJobs from './SavedJobs';
 import { StyledUser, StyledUserInfo } from "./StyledUser"
 
