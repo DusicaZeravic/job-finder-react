@@ -10,8 +10,6 @@ const User = ({ user }) => {
         user.savedJobs.map(job => getJobById(job)
             .then(res => setSaved(prev => [...prev, res.data])))
     }, [])
-
-    console.log(saved)
     return (
         <StyledUser>
             <StyledUserInfo>
