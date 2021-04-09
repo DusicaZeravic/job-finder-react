@@ -1,45 +1,46 @@
 # Job Finder App
 
-## Short description
-    - The Job Finder App is an application that was created as a final project within the ITBootcamp course. 
-    - The application is a simple version of the job search portal. It is possible to log in and register new users.
-    - Logged-in users can view jobs, while admin has the ability to add a new job, as well as delete existing ones.
+[DEMO](http://DusicaZeravic.github.io/job-finder-react)
+
+ The Job Finder App is an application that was created as a final project within the ITBootcamp course. The application is a simple version of the job search portal. It is possible to log in and register new users. Logged-in users can view jobs, while admin has the ability to add a new job, as well as delete existing ones.
 
 ## Technologies & Tools
-    1. JavaScript
-    2. React - 17.0.1
-    3. react-router-dom - 5.2.0.
-    4. styled components - 5.2.1
-    5. axios - 0.21.1
-    5. JSON server - 0.16.3
-    6. Git
-    7. VSCode
+    - JavaScript
+    - React - 17.0.1
+        - react-router-dom - 5.2.0.
+        - styled components - 5.2.1
+    - Node.js
+        - Express.js
+    - MongoDB
+        - Mongoose ODM
+    - axios - 0.21.1
+    - Git
+    - VSCode
+    - Heroku
 
-## Installation
-    $ Install node (version 12.19.0 or higher)
-    $ Install npm 
-    $ Install git
-    $ git clone https://github.com/DusicaZeravic/job-finder-react.git
-    $ npm install
+## Instructions on how to run it on your computer:
 
-## Run the app in the development mode
-    $ npm start (run the app)
-    Open http://localhost:3000 to view it in the browser.
-    In another terminal run: 
-    $ npm run server (run the server)
-    Open http://localhost:8000/jobs to view it in the browser.
+Install following:
 
+- node (version 12.19.0 or higher) - [Download node](https://nodejs.org/en/)
+- npm - node package manager (version 6.14.8 or higher)
+
+Next, clone following git repository (`git clone ` https://github.com/DusicaZeravic/job-finder-react)
+* In your terminal, go to the root directory and run command: `npm install`
+* Next command (in the same directory): `npm start`
+
+Next, clone following git repository (that is server repo) (`git clone` https://github.com/DusicaZeravic/job-finder-server)
+* Open new terminal and keep the prevous one running
+* In this terminal, go to the root directory and run command: `npm install`
+* Next command (in the same directory): `npm run dev`
 
 ## Functionalities
-    1. Login and Logout
-    2. Registration - creating new account
-    3. List all jobs
-    4. See more info about one job item
-    5. See info about company
-    6. Multiple filter
-    7. Create new job / delete job (only for admin)
-
-## To do
- - Pagination - show 5-10 ads per page
- - Profile for every user and possibility of applying for a job (save application on user profile)
- - Sort by date
+    - Login and Logout
+    - Registration - creating new account
+    - List all jobs
+    - See more info about one job item
+    - See info about company
+    - Multiple filter
+    - Create new job / delete job (only for admin)
+    - Pagination - show 5 ads per page
+    - Profile for every user and possibility of saving ads on users profile

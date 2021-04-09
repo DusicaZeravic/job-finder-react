@@ -13,7 +13,7 @@ const User = ({ user }) => {
     return (
         <StyledUser>
             <StyledUserInfo>
-                <img src="/profile.png" alt="Profile" width="250px" />
+                <img src='/job-finder-react/profile.png' alt="Profile" width="250px" />
                 <p>{user.firstName} {user.lastName}</p>
             </StyledUserInfo>
             <SavedJobs savedJobs={saved}/>

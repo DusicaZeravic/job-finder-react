@@ -6,7 +6,7 @@ export const StyledHome = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-image: url('/background.jpg');
+    background-image: url('/job-finder-react/background.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

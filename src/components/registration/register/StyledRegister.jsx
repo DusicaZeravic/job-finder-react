@@ -8,7 +8,7 @@ export const StyledRegister = styled.div`
     align-items: center;
     &::after {
         content: '';
-        background-image: url('/background1.jpg');
+        background-image: url('/job-finder-react/background1.jpg');
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
