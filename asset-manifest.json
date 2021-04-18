@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.js": "/job-finder-react/static/js/main.b4a8ba33.chunk.js",
-    "main.js.map": "/job-finder-react/static/js/main.b4a8ba33.chunk.js.map",
+    "main.js": "/job-finder-react/static/js/main.c8e0b000.chunk.js",
+    "main.js.map": "/job-finder-react/static/js/main.c8e0b000.chunk.js.map",
     "runtime-main.js": "/job-finder-react/static/js/runtime-main.26cb5547.js",
     "runtime-main.js.map": "/job-finder-react/static/js/runtime-main.26cb5547.js.map",
-    "static/js/2.d162d492.chunk.js": "/job-finder-react/static/js/2.d162d492.chunk.js",
-    "static/js/2.d162d492.chunk.js.map": "/job-finder-react/static/js/2.d162d492.chunk.js.map",
+    "static/js/2.d2d09144.chunk.js": "/job-finder-react/static/js/2.d2d09144.chunk.js",
+    "static/js/2.d2d09144.chunk.js.map": "/job-finder-react/static/js/2.d2d09144.chunk.js.map",
     "index.html": "/job-finder-react/index.html",
-    "static/js/2.d162d492.chunk.js.LICENSE.txt": "/job-finder-react/static/js/2.d162d492.chunk.js.LICENSE.txt"
+    "static/js/2.d2d09144.chunk.js.LICENSE.txt": "/job-finder-react/static/js/2.d2d09144.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.26cb5547.js",
-    "static/js/2.d162d492.chunk.js",
-    "static/js/main.b4a8ba33.chunk.js"
+    "static/js/2.d2d09144.chunk.js",
+    "static/js/main.c8e0b000.chunk.js"
   ]
 }
