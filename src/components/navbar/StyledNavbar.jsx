@@ -13,8 +13,24 @@ export const StyledNavbar = styled.nav`
             display: none;
         }
     
-    .items {
-        display: flex;
+    @media (max-width: 768px) {
+        label {
+            display: inline-block;
+            color: #4b4b4b;
+            background-color: #fff200;
+            font-size: 25px;
+            font-weight: bold;
+            padding: 16px;
+        }
+
+        input:checked ~ .items {
+            display: block;
+        }        
+    }
+`
+
+export const LoggedUserDiv = styled.div`
+    display: flex;
         a {
             width: 25%;
             padding: 28px;
@@ -31,13 +47,28 @@ export const StyledNavbar = styled.nav`
 
         .active {
             background-color: #fff200;
-        }
+        }     
 
-        .logged-user {
-        width: 45%;
-        padding: 15px;
-        display: flex; 
-        justify-content: space-around;
+    @media (max-width: 768px) {
+        display: none;
+        a:not(.username) {
+            display: block;
+            width: 100%;
+            border-top: 1px solid #fff200;
+            background-color: rgba(255, 250, 101, 1);
+            padding: 20px;
+            &:hover {
+                background-color: #fff200;
+            }
+        }
+    }
+`
+
+export const LoggedUser = styled.div`
+    width: 45%;
+    padding: 15px;
+    display: flex; 
+    justify-content: space-around;
         
         span,
         .username {
@@ -47,34 +78,53 @@ export const StyledNavbar = styled.nav`
             font-size: 17px;
             font-weight: normal;
             letter-spacing: 1px;
-            border-radius: 5px;
-           
+            border-radius: 5px; 
         }
 
-        button {
-            background-color: rgba(75, 75, 75, 0.6);
-            color: #fafafa;
-            padding: 0.6rem 2rem;
-            border: none;
-            outline: none;
-            border-radius: 5px;
-            font-size: 17px;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: all 0.5s;
-            position: relative;
-            &::after {
-                content: "\f2f5";
-                font-family: "Font Awesome 5 Free";
-                font-weight: 700;
-                position: absolute;
-                left: 80%;
-                top: 50%;
-                right: 0;
-                bottom: 0;
-                opacity: 0;
-                transform: translate(-50%, -50%);
-            }
+        @media (max-width: 768px) {
+            display: block;
+            width: 100%;
+            border-top: 1px solid #fff200;
+            background-color: rgba(255, 250, 101, 1);
+            text-align: center;
+            padding: 10px;
+                &:hover {
+                    background-color: #fff200;
+                    span,
+                    .username {
+                        background-color: #fffa65;
+                    }
+                }
+                span {
+                    margin-right: 50px;
+                }
+        }
+`
+
+export const LogoutButton = styled.button`
+    background-color: rgba(75, 75, 75, 0.6);
+    color: #fafafa;
+    padding: 0.6rem 2rem;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 17px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.5s;
+    position: relative;
+        &::after {
+            content: "\f2f5";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 700;
+            position: absolute;
+            left: 80%;
+            top: 50%;
+            right: 0;
+            bottom: 0;
+            opacity: 0;
+            transform: translate(-50%, -50%);
+        }
             &:hover {
                 background-color: rgba(75, 75, 75, 0.9);
                 transition: all 0.5s;
@@ -87,60 +137,6 @@ export const StyledNavbar = styled.nav`
                         color: #fff;
                     }
             }
-        }
-    }
-}
-
-    @media (max-width: 768px) {
-        label {
-            display: inline-block;
-            color: #4b4b4b;
-            background-color: #fff200;
-            font-size: 25px;
-            font-weight: bold;
-            padding: 16px;
-        }
-
-        input:checked ~ .items {
-            display: block;
-        }
-
-        .items {
-            display: none;
-        }
-
-        .items a:not(.username) {
-            display: block;
-            width: 100%;
-            border-top: 1px solid #fff200;
-            background-color: rgba(255, 250, 101, 1);
-            padding: 20px;
-            &:hover {
-                background-color: #fff200;
-            }
-        }
-        .items {
-            .logged-user {
-                display: block;
-                width: 100%;
-                border-top: 1px solid #fff200;
-                background-color: rgba(255, 250, 101, 1);
-                text-align: center;
-                padding: 10px;
-                &:hover {
-                    background-color: #fff200;
-                    span,
-                    .username {
-                        background-color: #fffa65;
-                    }
-                }
-                span {
-                    margin-right: 50px;
-                }
-        }
-        }
-        
-    }
 `
 
 

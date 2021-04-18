@@ -1,9 +1,9 @@
-import { StyledFooter } from './StyledFooter';
+import { StyledFooter, StyledParagraph } from './StyledFooter';
 
 const Footer = () => {
     return (
         <StyledFooter>
-            <p>&#169;2021. All right reserved. Dušica Žeravić.</p>
+            <StyledParagraph>&#169;2021. All right reserved. Dušica Žeravić.</StyledParagraph>
         </StyledFooter>
     )
 }

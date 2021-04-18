@@ -8,51 +8,8 @@ export const StyledJobList = styled.div`
     margin: 100px auto 30px auto;
     color: #4b4b4b;
 
-    .current-state {
-        text-align: center;
-        font-size: 30px;
-        margin-bottom: 20px;
-    }
-
-    .empty-filter {
-        margin: 0 auto;
-        padding: 8px 120px;
-        border-radius: 30px;
-        background-color: rgba(255, 250, 101, 0.5);
-        font-weight: bold;
-        letter-spacing: 1px;
-    }
-
     @media (max-width: 768px) {
         margin: 100px 0 10px 0;
-        .current-state {
-            font-size: 25px;
-        }
-    }
-
-    @media (max-width: 600px) {
-        .current-state {
-            font-size: 20px;
-        }
-    }
-
-    @media (max-width: 440px) {
-        .empty-filter {
-            padding: 10px;
-            text-align: center;
-            font-size: 15px;
-            margin: 20px 0 100px 0;
-        }
-    }
-
-    @media (max-width: 360px) {
-        .current-state {
-            font-size: 12px;
-        }
-
-        .empty-filter {
-            padding: 5px 40px;
-        }
     }
 `
 
@@ -93,5 +50,54 @@ export const StyledCreateNew = styled.div`
             padding: 10px 30px;
             font-size: 15px;
         }
+    }
+`
+
+export const CurrentState = styled.div`
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+
+    @media (max-width: 768px) {
+        font-size: 25px;
+    }
+
+    @media (max-width: 600px) {
+        font-size: 20px;
+    }
+
+    @media (max-width: 360px) {
+        font-size: 12px;
+    }
+`
+
+export const EmptyFilter = styled.div`
+    margin: 0 auto;
+    width: 40%;
+    padding: 8px 100px;
+    border-radius: 30px;
+    background-color: rgba(255, 250, 101, 0.5);
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-align: center;
+
+    @media (max-width: 768px) {
+        width: 60%;
+    }
+
+    @media (max-width: 500px) {
+        width: 70%;
+    }
+
+    @media (max-width: 440px) {
+        width: 70%;
+        padding: 8px;
+        text-align: center;
+        font-size: 15px;
+        margin: 20px auto 50px auto;
+    }
+
+    @media (max-width: 360px) {
+        padding: 5px 40px;
     }
 `

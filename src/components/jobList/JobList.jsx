@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Job from '../jobItem/Job';
 import Filter from '../Filter/Filter';
-import { StyledCreateNew, StyledJobList } from './StyledJobList';
+import { CurrentState, EmptyFilter, StyledCreateNew, StyledJobList } from './StyledJobList';
 import { Redirect, useHistory } from 'react-router-dom';
 
 const JobList = ({ allJobs, jobs, user, setJobs, savedJobs, setSavedJobs, pagination, jobsPerPage }) => {
@@ -21,16 +21,16 @@ const JobList = ({ allJobs, jobs, user, setJobs, savedJobs, setSavedJobs, pagina
 
     return user ? (
         <StyledJobList>
-            <div className="current-state">
+            <CurrentState>
                 <p>Currently {allJobs.length} open work positions at {companies.length} companies.</p>
-            </div>
+            </CurrentState>
             <Filter jobs={allJobs} setFilterInput={setFilterInput} setLocation={setLocation} setLevel={setLevel} />
             {user.role === 'admin' ? <StyledCreateNew><button onClick={() => history.push('/createjob')}>Create New</button></StyledCreateNew> : ''}
             {filterInput.trim() !== '' && location !== '' && level !== '' ?
                 filteredOptions.map(job => <Job key={job._id} job={job} setJobs={setJobs} user={user} savedJobs={savedJobs} setSavedJobs={setSavedJobs} />).length > 0 ?
                     filteredOptions.map(job => <Job key={job._id} job={job} setJobs={setJobs} user={user} savedJobs={savedJobs} setSavedJobs={setSavedJobs} />)
                     :
-                    <div className="empty-filter"><p>There's no result for this search!</p></div>
+                    <EmptyFilter><p>There's no result for this search!</p></EmptyFilter>
                 :
                 jobs.map(job => <Job key={job._id} job={job} setJobs={setJobs} user={user} savedJobs={savedJobs} setSavedJobs={setSavedJobs} />)
             }

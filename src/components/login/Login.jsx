@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { getUsers } from '../../service';
-import { StyledLogin, StyledLoginForm, StyledLogo } from './StyledLogin';
+import { ErrorMessage, InputContainer, StyledForm, StyledLogin, StyledLoginFormDiv, StyledLogo, Title } from './StyledLogin';
 
 const Login = ({ setUser }) => {
     const [email, setEmail] = useState('');
@@ -32,7 +32,7 @@ const Login = ({ setUser }) => {
 
     return (
         <StyledLogin>
-            <StyledLoginForm onSubmit={(e) => {
+            <StyledLoginFormDiv onSubmit={(e) => {
                 e.preventDefault();
                 getUsers().then(res => {
                     let user = res.data.find(el => el.email === email && el.password === password);
@@ -47,24 +47,24 @@ const Login = ({ setUser }) => {
                 <StyledLogo>
                     <i className="fas fa-business-time"></i>
                 </StyledLogo>
-                <h2>Sign in to your account</h2>
-                <form>
-                    <div>
+                <Title>Sign in to your account</Title>
+                <StyledForm>
+                    <InputContainer>
                         <input type="text" placeholder="Enter email address..." onChange={(e) => setEmail(e.target.value)} />
                         <i className="far fa-user"></i>
-                        <p className="error-msg">{emailError}</p>
-                    </div>
-                    <div>
+                        <ErrorMessage>{emailError}</ErrorMessage>
+                    </InputContainer>
+                    <InputContainer>
                         <input type="password" placeholder="Enter password..." onChange={(e) => setPassword(e.target.value)} />
                         <i className="fas fa-unlock-alt"></i>
-                        <p className="error-msg">{passwordError}</p>
-                    </div>
-                    <div>
+                        <ErrorMessage>{passwordError}</ErrorMessage>
+                    </InputContainer>
+                    <InputContainer>
                         <input type="submit" value="Sign In" />
-                    </div>
+                    </InputContainer>
                     <Link to='/register'>Don't have an account? Sign Up Here!</Link>
-                </form>
-            </StyledLoginForm>
+                </StyledForm>
+            </StyledLoginFormDiv>
         </StyledLogin>
 
     )

@@ -1,4 +1,4 @@
-import { StyledPagination, StyledButtons } from "./StyledPagination";
+import { StyledPagination, StyledButtons, StyledButton } from "./StyledPagination";
 
 const Pagination = ({ current, jobsPerPage, totalJobs, paginate, showPreviousPage, showNextPage }) => {
     const pageNumbers = [];
@@ -10,16 +10,16 @@ const Pagination = ({ current, jobsPerPage, totalJobs, paginate, showPreviousPag
     return (
         <StyledPagination>
             <StyledButtons>
-                {current !== pageNumbers[0] ? <button onClick={() => {
+                {current !== pageNumbers[0] ? <StyledButton onClick={() => {
                     showPreviousPage()
-                }}>Prev</button> : ''}
-                {pageNumbers.map(number => <button onClick={() => {
+                }}>Prev</StyledButton> : ''}
+                {pageNumbers.map(number => <StyledButton onClick={() => {
                     paginate(number)
                 }}
-                    key={number}>{number}</button>)}
-                {current !== pageNumbers[pageNumbers.length - 1] ? <button onClick={() => {
+                    key={number}>{number}</StyledButton>)}
+                {current !== pageNumbers[pageNumbers.length - 1] ? <StyledButton onClick={() => {
                     showNextPage()
-                }}>Next</button> : ''}
+                }}>Next</StyledButton> : ''}
             </StyledButtons>
         </StyledPagination>
     )

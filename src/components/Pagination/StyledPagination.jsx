@@ -7,33 +7,13 @@ export const StyledPagination = styled.div`
     align-items: center;
     justify-content: center;
     margin: 10px auto;
-    button {
-        cursor: pointer;
-        padding: 8px 15px;
-        font-size: 15px;
-        background-color: rgba(75, 75, 75, 0.8);
-        border: 1px solid #fafafa;
-        outline: none;
-        border-radius: 4px;
-        color: #fafafa;
-    }
-
-    @media (max-width: 768px) {
-        button {
-            padding: 7px 15px;
-        }
-    }
 
     @media (max-width: 500px) {
         margin: 20px auto;
-        .button {
-            padding: 3px 8px;
-        }
     }
 
     @media (max-width: 360px) {
         margin: 30px auto;
-        
     }
 `
 
@@ -51,5 +31,24 @@ export const StyledButtons = styled.div`
 
     @media (max-width: 360px) {
         width: 200px;
+    }
+`
+
+export const StyledButton = styled.button`
+    cursor: pointer;
+    padding: 8px 15px;
+    font-size: 15px;
+    background-color: rgba(75, 75, 75, 0.8);
+    border: 1px solid #fafafa;
+    outline: none;
+    border-radius: 4px;
+    color: #fafafa;
+
+    @media (max-width: 768px) {
+        padding: 7px 15px;
+    }
+
+    @media (max-width: 500px) {
+        padding: 3px 8px;
     }
 `

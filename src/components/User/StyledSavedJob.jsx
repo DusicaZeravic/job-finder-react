@@ -10,22 +10,11 @@ export const StyledSavedJob = styled.div`
     margin-bottom: 40px;
     background-color: #fff;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    .v-line {
-        border-right: 0.5px solid #777777;
-        height: 150px;
-    }
 
     @media (max-width: 768px) {
         display: flex;
         flex-direction: column;
         padding: 20px 0;
-        .v-line {
-            border: none;
-            height: 0;
-            border-bottom: 0.5px solid #777777;
-            width: 90%;
-            margin-top: 20px;
-        }
     }
 `
 
@@ -67,5 +56,18 @@ export const StyledContent = styled.div`
 
     @media (max-width: 768px) {
         text-align: center;
+    }
+`
+
+export const VerticalLine = styled.div`
+    border-right: 0.5px solid #777777;
+    height: 150px;
+
+    @media (max-width: 768px) {
+        border: none;
+        height: 0;
+        border-bottom: 0.5px solid #777777;
+        width: 90%;
+        margin-top: 20px;
     }
 `

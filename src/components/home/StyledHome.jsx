@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledHome = styled.div`
+export const StyledHomeContainer = styled.div`
     width: 100%;
     min-height: 85vh;
     display: flex;
@@ -75,7 +75,7 @@ export const StyledHome = styled.div`
    }
 `
 
-export const StyledDiv = styled.div`
+export const StyledSlider = styled.div`
     width: 70%;
     display: flex;
     justify-content: space-between;

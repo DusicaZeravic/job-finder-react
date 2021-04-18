@@ -1,7 +1,7 @@
 import { useRegister } from '../../hooks/useRegister';
 import { useRegisterError } from '../../hooks/useRegisterError';
 import { getUsers, postUser } from '../../../service';
-import { StyledRegisterFront } from './StyledRegisterFront';
+import { ErrorMessage, StyledRegisterForm, StyledRegisterFront } from './StyledRegisterFront';
 
 const FrontRegister = ({ rotate }) => {
     const [firstName, setFirstName, lastName, setLastName, email, setEmail, password, setPassword, confirmedPassword, setConfirmedPassword] = useRegister();
@@ -65,7 +65,7 @@ const FrontRegister = ({ rotate }) => {
 
     return (
         <StyledRegisterFront>
-            <form onSubmit={(e) => {
+            <StyledRegisterForm onSubmit={(e) => {
                 e.preventDefault();
                 if (!isValid()) {
                     return
@@ -92,38 +92,38 @@ const FrontRegister = ({ rotate }) => {
                 })
             }}>
                 <h2>Create an Account</h2>
-                <p className="unique-error">{uniqueError}</p>
+                <ErrorMessage>{uniqueError}</ErrorMessage>
                 <ul>
                     <li>
                         <label htmlFor="first_name">First Name</label>
                         <input value={firstName} type="text" name="first_name" id="first-name" onChange={(e) => setFirstName(e.target.value)} />
                     </li>
-                    <p className="error-msg">{firstNameError}</p>
+                    <ErrorMessage>{firstNameError}</ErrorMessage>
                     <li>
                         <label htmlFor="last_name">Last Name</label>
                         <input value={lastName} type="text" name="last_name" id="last-name" onChange={(e) => setLastName(e.target.value)} />
                     </li>
-                    <p className="error-msg">{lastNameError}</p>
+                    <ErrorMessage>{lastNameError}</ErrorMessage>
                     <li>
                         <label htmlFor="email">E-mail</label>
                         <input value={email} type="email" name="email" id="email" onChange={(e) => setEmail(e.target.value)} />
                     </li>
-                    <p className="error-msg">{emailError}</p>
+                    <ErrorMessage>{emailError}</ErrorMessage>
                     <li>
                         <label htmlFor="password">Password</label>
                         <input value={password} type="password" name="password" id="password" onChange={(e) => setPassword(e.target.value)} />
                     </li>
-                    <p className="error-msg">{passwordError}</p>
+                    <ErrorMessage>{passwordError}</ErrorMessage>
                     <li>
                         <label htmlFor="confirm_password">Confirm Password</label>
                         <input value={confirmedPassword} type="password" name="confirm_password" id="confirm_password" onChange={(e) => setConfirmedPassword(e.target.value)} />
                     </li>
-                    <p className="error-msg">{confirmedPasswordError}</p>
+                    <ErrorMessage>{confirmedPasswordError}</ErrorMessage>
                     <li>
                         <input type="submit" value="Sign Up" />
                     </li>
                 </ul>
-            </form>
+            </StyledRegisterForm>
         </StyledRegisterFront>
     )
 }

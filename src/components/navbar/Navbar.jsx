@@ -1,5 +1,5 @@
 import { useHistory, NavLink, Link } from 'react-router-dom';
-import { StyledNavbar } from './StyledNavbar';
+import { LoggedUser, LoggedUserDiv, LogoutButton, StyledNavbar } from './StyledNavbar';
 
 const Navbar = ({ user, setUser }) => {
     const history = useHistory();
@@ -9,29 +9,28 @@ const Navbar = ({ user, setUser }) => {
             <label htmlFor="hamburger">&#9776;</label>
             <input type="checkbox" id="hamburger" />
 
-            <div className="items">
+            <LoggedUserDiv className="items">
                 <NavLink to="/" exact activeClassName="active">Home</NavLink>
                 <NavLink to="/jobs" exact activeClassName="active">Job List</NavLink>
                 {
                     user ?
-                        <div className='logged-user'>
+                        <LoggedUser>
                             {
                                 user.role !== 'admin' ? <span><Link className="username" to={`/user/${user._id}`}>{user.username}</Link></span> : <span>{user.username}</span>
                             }
-                            <button onClick={() => {
+                            <LogoutButton onClick={() => {
                                 setUser(null);
                                 history.push('/');
                             }
-                            }>Logout</button>
+                            }>Logout</LogoutButton>
 
-                        </div> :
+                        </LoggedUser> :
                         <>
                             <NavLink className="push-right" to="/login" exact activeClassName="active">Login</NavLink>
                             <NavLink className="push-right" to="/register" exact activeClassName="active">Registration</NavLink>
                         </>
                 }
-            </div>
-
+            </LoggedUserDiv>
         </StyledNavbar>
     )
 }

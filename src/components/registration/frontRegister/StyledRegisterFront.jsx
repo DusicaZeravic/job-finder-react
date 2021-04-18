@@ -6,10 +6,11 @@ export const StyledRegisterFront = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+`
 
-    form {
-        width: 100%;
-        min-height: 500px;
+export const StyledRegisterForm = styled.form`
+        width: 800px;
+        min-height: 65vh;
         display: flex;
         flex-direction: column;
         padding: 10px 30px;
@@ -26,24 +27,23 @@ export const StyledRegisterFront = styled.div`
     ul {
         list-style-type: none;
         padding: 0;
-        max-width: 800px;
+        max-width: 80%;
         margin: 0 auto;
         li {
             display: flex;
             flex-wrap: wrap;
             align-items: center;
+            justify-content: center;
             label {
                 padding: 8px;
                 font-weight: 300;
                 letter-spacing: 1px;
                 text-transform: uppercase;
+                flex: 1 0 120px;
+                margin-right: 50px
             }
         }
     }
-        ul  li  label {
-            flex: 1 0 120px;
-            margin-right: 50px
-        }
 
         ul  li  label + * {
             flex: 1 0 220px;
@@ -75,45 +75,42 @@ export const StyledRegisterFront = styled.div`
             }
         }
 
-        .error-msg,
-        .unique-error {
-            font-size: 13px;
-            color: #e05555;
-            text-align: center;
-            font-weight: bold;
-        }
-    }
-
     @media (max-width: 768px) {
-       form {
-           min-height: 500px;
-           h2 {
-               font-size: 20px;
-               margin: 20px 0 10px 0;
-           }
-           ul li label {
-               font-size: 12px;
-               margin: 0 auto;
-           }
-           ul li input {
-            padding: 5px 20px;
-           }
-           input[type="submit"] {
-               margin-top: 40px;
-           }
-           .error-msg {
-               margin: 1px 0;
-           }
-       }
+        padding: 0;
+        h2 {
+            font-size: 20px;
+            margin: 20px 0 10px 0;
+        }
+        ul li label {
+            font-size: 12px;
+            margin: 0 auto;
+        }
+        ul li input {
+            padding: 6px 20px;
+        }
+        input[type="submit"] {
+            margin: 20px 0;
+        }
     }
 
     @media (max-width: 500px) {
-        form {
-            width: 150%;
-            h2 {
-                font-size: 15px;
-            }
+        h2 {
+            font-size: 15px;
         }
-        
+    }
+
+    @media (max-width: 440px) {
+        padding: 0 30px;
+    }
+`
+
+export const ErrorMessage = styled.p`
+    font-size: 13px;
+    color: #e05555;
+    text-align: center;
+    font-weight: bold;
+
+    @media (max-width: 768px) {
+        margin: 1px 0;
     }
 `

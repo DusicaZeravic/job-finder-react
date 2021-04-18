@@ -6,11 +6,11 @@ export const StyledFooter = styled.footer`
     position: absolute;
     bottom: 0; 
     margin-top: 40px;
-    p {
-        text-align: center;
-        font-size: 15px;
-        color: #4b4b4b;
-        line-height: 5vh;
-        margin: 0;
-    }
+`
+export const StyledParagraph = styled.p`
+    text-align: center;
+    font-size: 15px;
+    color: #4b4b4b;
+    line-height: 5vh;
+    margin: 0;
 `

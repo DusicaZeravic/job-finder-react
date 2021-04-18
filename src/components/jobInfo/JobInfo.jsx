@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Redirect, useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { getJobById } from '../../service';
-import { StyledInnerDiv, StyledJobInfo } from './StyledJobInfo';
+import { JobTitle, JobDescription, StyledInnerDiv, StyledJobInfo, Experience, Contact } from './StyledJobInfo';
 
 const JobInfo = ({ user }) => {
     const [job, setJob] = useState(null);
@@ -19,11 +19,11 @@ const JobInfo = ({ user }) => {
         <>
             <StyledJobInfo>
                 <StyledInnerDiv>
-                    <h1>{job?.title}</h1>
+                    <JobTitle>{job?.title}</JobTitle>
                     <h3><Link to={`/jobs/${job?._id}/${job?.company_info.name}`}>{job?.company_info.name}</Link>, {job?.location}</h3>
-                    <h4>Level of experience : <span>{job?.seniority.charAt(0).toUpperCase() + String(job?.seniority.slice(1))}</span></h4>
-                    <p>{job?.job_description}</p>
-                    <p>If you are interested in this position you can contact us: <span>{job?.company_info.contact[0]}</span><span>{job?.company_info.contact[1]}</span></p>
+                    <Experience>Level of experience : <span>{job?.seniority.charAt(0).toUpperCase() + String(job?.seniority.slice(1))}</span></Experience>
+                    <JobDescription>{job?.job_description}</JobDescription>
+                    <Contact>If you are interested in this position you can contact us: <span>{job?.company_info.contact[0]}</span><span>{job?.company_info.contact[1]}</span></Contact>
                 </StyledInnerDiv>
             </StyledJobInfo>
         </>

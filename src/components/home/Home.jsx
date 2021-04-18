@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import { StyledHome, StyledDiv, StyledCurrent, StyledPrevious, StyledNext } from "./StyledHome"
+import { StyledHomeContainer, StyledSlider, StyledCurrent, StyledPrevious, StyledNext } from "./StyledHome"
 
 const Home = ({ jobs, user }) => {
     const [current, setCurrent] = useState(0);
@@ -9,9 +9,9 @@ const Home = ({ jobs, user }) => {
     const previousJob = () => current === 0 ? setCurrent(Math.floor((jobs.length / 2)) - 1) : setCurrent(current - 1);
 
     return (
-        <StyledHome>
+        <StyledHomeContainer>
             <h1>Find Your Dream Job</h1>
-            <StyledDiv>
+            <StyledSlider>
                 <StyledPrevious onClick={previousJob}>
                     <i className="fas fa-chevron-left"></i>
                 </StyledPrevious>
@@ -22,12 +22,12 @@ const Home = ({ jobs, user }) => {
                 <StyledNext onClick={nextJob}>
                     <i className="fas fa-chevron-right"></i>
                 </StyledNext>
-            </StyledDiv>
+            </StyledSlider>
             {user ?
                 <Link to='/jobs'>You want to see more about these jobs? Click here!</Link>
                 :
                 <Link to='/login'>You want to see more about these jobs? Click here!</Link>}
-        </StyledHome>
+        </StyledHomeContainer>
     )
 }
 

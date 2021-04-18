@@ -44,7 +44,7 @@ const App = () => {
   const showNextPage = () => setCurrentPage(currentPage + 1);
 
   return (
-    <Router>
+    <Router basename="/job-finder-react">
       <GlobalStyle />
       <Navbar user={user} setUser={setUser} />
       <Switch>
