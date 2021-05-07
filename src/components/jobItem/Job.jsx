@@ -1,10 +1,13 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { deleteJobById, updateUser } from '../../service';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateUser } from '../../service';
 import { StyledJobItem, StyledDeleteButton, StyledMessage, JobDescription, Overlay, StyledButtons } from './StyledJobItem';
+import { deleteJob } from '../../actions/jobs';
 
-const Job = ({ job, setJobs, user, savedJobs, setSavedJobs }) => {
+const Job = ({ job, savedJobs, user }) => {
     const [message, setMessage] = useState('');
+    const dispatch = useDispatch();
 
     return (
         <StyledJobItem>
@@ -32,9 +35,13 @@ const Job = ({ job, setJobs, user, savedJobs, setSavedJobs }) => {
                     }}><i className="fas fa-heart"></i></button> : ''}
                     {user.role === 'admin' ? <StyledDeleteButton onClick={() => {
                         if (window.confirm('Are you sure you want to delete this record?')) {
-                            deleteJobById(job._id).then(() => {
-                                setJobs(previous => previous.filter(el => el.id !== job._id));
-                            })
+                            dispatch(deleteJob(job._id))
+                                .then(() => {
+                                    console.log('deleted');
+                                })
+                                .catch((err) => {
+                                    console.log(err);
+                                })
                         }
                     }}><i className="fas fa-trash-alt"></i></StyledDeleteButton> : ''}
                 </StyledButtons>

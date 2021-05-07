@@ -9,10 +9,12 @@
     - React - 17.0.1
         - react-router-dom - 5.2.0.
         - styled components - 5.2.1
+        - react-redux - 7.2.4
     - Node.js
         - Express.js
     - MongoDB
         - Mongoose ODM
+    - Redux - 4.1.0
     - axios - 0.21.1
     - Git
     - VSCode

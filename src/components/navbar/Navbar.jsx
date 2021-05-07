@@ -1,4 +1,5 @@
 import { useHistory, NavLink, Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import { LoggedUser, LoggedUserDiv, LogoutButton, StyledNavbar } from './StyledNavbar';
 
 const Navbar = ({ user, setUser }) => {

@@ -1,11 +1,19 @@
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useRegister } from '../../hooks/useRegister';
 import { useRegisterError } from '../../hooks/useRegisterError';
-import { getUsers, postUser } from '../../../service';
 import { ErrorMessage, StyledRegisterForm, StyledRegisterFront } from './StyledRegisterFront';
+import { addUser, getAllUsers } from '../../../actions/auth';
 
 const FrontRegister = ({ rotate }) => {
     const [firstName, setFirstName, lastName, setLastName, email, setEmail, password, setPassword, confirmedPassword, setConfirmedPassword] = useRegister();
     const [firstNameError, setFirstNameError, lastNameError, setLastNameError, emailError, setEmailError, passwordError, setPasswordError, confirmedPasswordError, setConfirmedPasswordError, uniqueError, setUniqueError] = useRegisterError();
+    const users = useSelector(state => state.users);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getAllUsers());
+    })
 
     const validateEmail = (email) => {
         const emailRegEx = /\S+@\S+\.\S+/;
@@ -70,9 +78,9 @@ const FrontRegister = ({ rotate }) => {
                 if (!isValid()) {
                     return
                 }
-                getUsers().then(res => {
+                dispatch(getAllUsers()).then(res => {
                     let newUser = {
-                        id: generateId(res.data),
+                        id: generateId(users),
                         username: firstName + lastName.charAt(0),
                         firstName: firstName,
                         lastName: lastName,
@@ -80,8 +88,8 @@ const FrontRegister = ({ rotate }) => {
                         password: password,
                         confirm_password: confirmedPassword
                     };
-                    if (!res.data.some(user => user.email === email)) {
-                        postUser(newUser).then(() => {
+                    if (!users.some(user => user.email === email)) {
+                        dispatch(addUser(newUser)).then(() => {
                             setUniqueError('');
                             clearAllInputs();
                             rotate();

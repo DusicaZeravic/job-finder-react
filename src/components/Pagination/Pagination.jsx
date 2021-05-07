@@ -25,4 +25,4 @@ const Pagination = ({ current, jobsPerPage, totalJobs, paginate, showPreviousPag
     )
 }
 
-export default Pagination
+export default Pagination;

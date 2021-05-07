@@ -1,10 +1,14 @@
 import { usePostJob } from '../hooks/usePostJob';
 import { Redirect } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 import { postJob } from '../../service';
 import { StyledButton, StyledCreateJob, StyledForm, StyledJobInfo, StyledCompanyInfo, StyledErrorMsg, StyledSuccessMsg } from './StyledCreateJob';
+import { createNewJob } from '../../actions/jobs';
 
-const CreateJob = ({ user, jobs, setJobs }) => {
+const CreateJob = ({ user }) => {
     const [jobTitle, setJobTitle, jobLocation, setJobLocation, seniority, setSeniority, jobCategory, setJobCategory, jobSnippet, setJobSnippet, jobDescription, setJobDescription, companyName, setCompanyName, companyInfo, setCompanyInfo, location, setLocation, employeesNumber, setEmployeesNumber, phone, setPhone, email, setEmail, url, setUrl, errorMessage, setErrorMessage, successMessage, setSuccessMessage] = usePostJob();
+    const jobs = useSelector(state => state.jobs);
+    const dispatch = useDispatch();
 
     let categories = Array.from(new Set(jobs.map(job => job.category)));
     let levels = Array.from(new Set(jobs.map(job => job.seniority)));
@@ -64,9 +68,17 @@ const CreateJob = ({ user, jobs, setJobs }) => {
                         }
                     };
 
-                    postJob(newJob).then(res => {
-                        setJobs(prev => [...prev, res.data]);                       
-                    });
+                    dispatch(createNewJob(newJob))
+                        .then(data => {
+                            console.log(data);
+                        })
+                        .catch(err => {
+                            console.log(err);
+                        })
+
+                    // postJob(newJob).then(res => {
+                    //     setJobs(prev => [...prev, res.data]);                       
+                    // });
                 }
             }}>
 

@@ -1,9 +1,17 @@
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { StyledHomeContainer, StyledSlider, StyledCurrent, StyledPrevious, StyledNext } from "./StyledHome"
+import { getAll } from '../../actions/jobs';
 
-const Home = ({ jobs, user }) => {
+const Home = ({ user }) => {
     const [current, setCurrent] = useState(0);
+    const jobs = useSelector(state => state.jobs);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getAll());
+    })
 
     const nextJob = () => jobs.length - 1 === current ? setCurrent(0) : setCurrent(current + 1);
     const previousJob = () => current === 0 ? setCurrent(Math.floor((jobs.length / 2)) - 1) : setCurrent(current - 1);

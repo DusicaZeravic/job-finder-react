@@ -1,16 +1,23 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
+import { getAllUsers } from '../../actions/auth';
 import { getUsers } from '../../service';
 import { ErrorMessage, InputContainer, StyledForm, StyledLogin, StyledLoginFormDiv, StyledLogo, Title } from './StyledLogin';
 
 const Login = ({ setUser }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
     const [emailError, setEmailError] = useState('');
     const [passwordError, setPasswordError] = useState('');
+    const dispatch = useDispatch();
+    const users = useSelector(state => state.users);
 
     const history = useHistory();
+
+    useEffect(() => {
+        dispatch(getAllUsers())
+    })
 
     const isValid = (user) => {
         if (email.trim() !== user?.email) {
@@ -34,8 +41,8 @@ const Login = ({ setUser }) => {
         <StyledLogin>
             <StyledLoginFormDiv onSubmit={(e) => {
                 e.preventDefault();
-                getUsers().then(res => {
-                    let user = res.data.find(el => el.email === email && el.password === password);
+                getUsers().then(() => {
+                    let user = users.find(el => el.email === email && el.password === password);
                     if (user) {
                         setUser(user);
                         history.push('/jobs');
