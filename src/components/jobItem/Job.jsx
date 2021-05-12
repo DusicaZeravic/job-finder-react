@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { updateUser } from '../../service';
 import { StyledJobItem, StyledDeleteButton, StyledMessage, JobDescription, Overlay, StyledButtons } from './StyledJobItem';
 import { deleteJob } from '../../actions/jobs';
@@ -23,15 +23,20 @@ const Job = ({ job, savedJobs, user }) => {
                 <StyledButtons>
                     <Link to={`/jobs/${job._id}`}><button><i className="fas fa-eye"></i></button></Link>
                     {user.role !== 'admin' ? <button onClick={() => {
-                        user.savedJobs = [...user.savedJobs, job._id];
-                        updateUser(user._id, user).then(() => {
-                            console.log('updated!');
-                            user = { ...user, savedJobs };
-                            setMessage('Successfully saved on your profile!');
-                            setTimeout(() => {
-                                setMessage('');
-                            }, 2000);
-                        })
+                        if (!user.savedJobs.some(savedJob => savedJob === job._id)) {
+                            user.savedJobs = [...user.savedJobs, job._id];
+                            updateUser(user._id, user).then(() => {
+                                console.log('updated!');
+                                user = { ...user, savedJobs };
+                                setMessage('Successfully saved on your profile!');
+                                setTimeout(() => {
+                                    setMessage('');
+                                }, 2000);
+                            })
+                        } else {
+                            console.log('You have already saved this ad!')
+                        }
+
                     }}><i className="fas fa-heart"></i></button> : ''}
                     {user.role === 'admin' ? <StyledDeleteButton onClick={() => {
                         if (window.confirm('Are you sure you want to delete this record?')) {

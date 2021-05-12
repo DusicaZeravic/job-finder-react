@@ -1,5 +1,5 @@
-import { ADD_JOB, DELETE_JOB, RETRIEVE_JOBS } from './types';
-import { deleteJobById, getJobs, postJob } from '../service';
+import { ADD_JOB, DELETE_JOB, RETRIEVE_JOBS, RETRIEVE_JOB_BY_ID } from './types';
+import { deleteJobById, getJobById, getJobs, postJob } from '../service';
 
 export const getAll = () => async (dispatch) => {
     try {
@@ -27,6 +27,19 @@ export const createNewJob = (job) => async (dispatch) => {
         return Promise.reject(err);
     }
 }
+
+// export const getOneJob = (id) => async (dispatch) => {
+//     try {
+//         const res = await getJobById(id);
+
+//         dispatch({
+//             type: RETRIEVE_JOB_BY_ID,
+//             payload: res.data
+//         })
+//     } catch (err) {
+//         console.log(err);
+//     }
+// }
 
 export const deleteJob = (id) => async (dispatch) => {
     try {

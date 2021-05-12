@@ -36,10 +36,11 @@ export const StyledDate = styled.div`
 `
 
 export const StyledContent = styled.div`
-    width: 75%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     margin-left: 20px;
+    text-align: center;
     a {
         color: #4b4b4b;
         text-decoration: none;
@@ -56,6 +57,17 @@ export const StyledContent = styled.div`
 
     @media (max-width: 768px) {
         text-align: center;
+    }
+`
+
+export const StyledDeleteDiv = styled.div`
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    i {
+        font-size: 30px;
+        cursor: pointer;
     }
 `
 

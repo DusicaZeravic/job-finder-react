@@ -1,4 +1,4 @@
-import { ADD_JOB, DELETE_JOB, RETRIEVE_JOBS } from '../actions/types';
+import { ADD_JOB, DELETE_JOB, RETRIEVE_JOBS, RETRIEVE_JOB_BY_ID } from '../actions/types';
 
 const initialState = [];
 
@@ -10,6 +10,8 @@ const jobReducer = (state = initialState, action) => {
             return payload;
         case ADD_JOB:
             return [...state, payload];
+        // case RETRIEVE_JOB_BY_ID:
+        //     return payload;
         case DELETE_JOB:
             return state.filter(({ id }) => id !== payload.id)
         default:
